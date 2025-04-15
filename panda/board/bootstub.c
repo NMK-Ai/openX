@@ -6,7 +6,6 @@
 // ********************* Includes *********************
 #include "config.h"
 
-#include "drivers/led.h"
 #include "drivers/pwm.h"
 #include "drivers/usb.h"
 

@@ -3,7 +3,6 @@
 
 #include "safety.h"
 
-#include "board/drivers/led.h"
 #include "board/drivers/pwm.h"
 #include "board/drivers/usb.h"
 
@@ -77,7 +76,7 @@ void tick_handler(void) {
       check_registers();
 
       // turn off the blue LED, turned on by CAN
-      led_set(LED_BLUE, false);
+      current_board->set_led(LED_BLUE, false);
 
       // Blink and OBD CAN
 #ifdef FINAL_PROVISIONING
@@ -88,7 +87,7 @@ void tick_handler(void) {
       uptime_cnt += 1U;
     }
 
-    led_set(LED_GREEN, green_led_enabled);
+    current_board->set_led(LED_GREEN, green_led_enabled);
 
     // Check on button
     bool current_button_status = current_board->get_button();
@@ -147,8 +146,8 @@ int main(void) {
   peripherals_init();
   detect_board_type();
   // red+green leds enabled until succesful USB init, as a debug indicator
-  led_set(LED_RED, true);
-  led_set(LED_GREEN, true);
+  current_board->set_led(LED_RED, true);
+  current_board->set_led(LED_GREEN, true);
 
   // print hello
   print("\n\n\n************************ MAIN START ************************\n");
@@ -177,8 +176,8 @@ int main(void) {
   // enable USB (right before interrupts or enum can fail!)
   usb_init();
 
-  led_set(LED_RED, false);
-  led_set(LED_GREEN, false);
+  current_board->set_led(LED_RED, false);
+  current_board->set_led(LED_GREEN, false);
 
   print("**** INTERRUPTS ON ****\n");
   enable_interrupts();
@@ -224,16 +223,16 @@ int main(void) {
 
     // useful for debugging, fade breaks = panda is overloaded
     for (uint32_t fade = 0U; fade < MAX_LED_FADE; fade += 1U) {
-      led_set(LED_RED, true);
+      current_board->set_led(LED_RED, true);
       delay(fade >> 4);
-      led_set(LED_RED, false);
+      current_board->set_led(LED_RED, false);
       delay((MAX_LED_FADE - fade) >> 4);
     }
 
     for (uint32_t fade = MAX_LED_FADE; fade > 0U; fade -= 1U) {
-      led_set(LED_RED, true);
+      current_board->set_led(LED_RED, true);
       delay(fade >> 4);
-      led_set(LED_RED, false);
+      current_board->set_led(LED_RED, false);
       delay((MAX_LED_FADE - fade) >> 4);
     }
   }

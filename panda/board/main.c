@@ -1,7 +1,6 @@
 // ********************* Includes *********************
 #include "config.h"
 
-#include "drivers/led.h"
 #include "drivers/pwm.h"
 #include "drivers/usb.h"
 #include "drivers/simple_watchdog.h"
@@ -77,14 +76,14 @@ void set_safety_mode(uint16_t mode, uint16_t param) {
   switch (mode_copy) {
     case SAFETY_SILENT:
       set_intercept_relay(false, false);
-      if (current_board->harness_config->has_harness) {
+      if (current_board->has_obd) {
         current_board->set_can_mode(CAN_MODE_NORMAL);
       }
       can_silent = ALL_CAN_SILENT;
       break;
     case SAFETY_NOOUTPUT:
       set_intercept_relay(false, false);
-      if (current_board->harness_config->has_harness) {
+      if (current_board->has_obd) {
         current_board->set_can_mode(CAN_MODE_NORMAL);
       }
       can_silent = ALL_CAN_LIVE;
@@ -93,7 +92,7 @@ void set_safety_mode(uint16_t mode, uint16_t param) {
       set_intercept_relay(false, false);
       heartbeat_counter = 0U;
       heartbeat_lost = false;
-      if (current_board->harness_config->has_harness) {
+      if (current_board->has_obd) {
         // Clear any pending messages in the can core (i.e. sending while comma power is unplugged)
         // TODO: rewrite using hardware queues rather than fifo to cancel specific messages
         can_clear_send(CANIF_FROM_CAN_NUM(1), 1);
@@ -109,7 +108,7 @@ void set_safety_mode(uint16_t mode, uint16_t param) {
       set_intercept_relay(true, false);
       heartbeat_counter = 0U;
       heartbeat_lost = false;
-      if (current_board->harness_config->has_harness) {
+      if (current_board->has_obd) {
         current_board->set_can_mode(CAN_MODE_NORMAL);
       }
       can_silent = ALL_CAN_LIVE;
@@ -190,11 +189,11 @@ static void tick_handler(void) {
       #endif
 
       // set green LED to be controls allowed
-      led_set(LED_GREEN, controls_allowed | green_led_enabled);
+      current_board->set_led(LED_GREEN, controls_allowed | green_led_enabled);
 
       // turn off the blue LED, turned on by CAN
       // unless we are in power saving mode
-      led_set(LED_BLUE, (uptime_cnt & 1U) && (power_save_status == POWER_SAVE_STATUS_ENABLED));
+      current_board->set_led(LED_BLUE, (uptime_cnt & 1U) && (power_save_status == POWER_SAVE_STATUS_ENABLED));
 
       const bool recent_heartbeat = heartbeat_counter == 0U;
 
@@ -304,10 +303,9 @@ int main(void) {
   clock_init();
   peripherals_init();
   detect_board_type();
-  led_init();
   // red+green leds enabled until succesful USB/SPI init, as a debug indicator
-  led_set(LED_RED, true);
-  led_set(LED_GREEN, true);
+  current_board->set_led(LED_RED, true);
+  current_board->set_led(LED_GREEN, true);
   adc_init();
 
   // print hello
@@ -321,10 +319,6 @@ int main(void) {
 
   // init board
   current_board->init();
-  current_board->set_can_mode(CAN_MODE_NORMAL);
-  if (current_board->harness_config->has_harness) {
-    harness_init();
-  }
 
   // panda has an FPU, let's use it!
   enable_fpu();
@@ -340,7 +334,7 @@ int main(void) {
   set_safety_mode(SAFETY_SILENT, 0U);
 
   // enable CAN TXs
-  enable_can_transceivers(true);
+  current_board->enable_can_transceivers(true);
 
   // init watchdog for heartbeat loop, fed at 8Hz
   simple_watchdog_init(FAULT_HEARTBEAT_LOOP_WATCHDOG, (3U * 1000000U / 8U));
@@ -357,14 +351,12 @@ int main(void) {
 
 #ifdef ENABLE_SPI
   if (current_board->has_spi) {
-    gpio_spi_init();
     spi_init();
   }
 #endif
 
-  led_set(LED_RED, false);
-  led_set(LED_GREEN, false);
-  led_set(LED_BLUE, false);
+  current_board->set_led(LED_RED, false);
+  current_board->set_led(LED_GREEN, false);
 
   print("**** INTERRUPTS ON ****\n");
   enable_interrupts();
@@ -377,24 +369,24 @@ int main(void) {
       #endif
         // useful for debugging, fade breaks = panda is overloaded
         for (uint32_t fade = 0U; fade < MAX_LED_FADE; fade += 1U) {
-          led_set(LED_RED, true);
+          current_board->set_led(LED_RED, true);
           delay(fade >> 4);
-          led_set(LED_RED, false);
+          current_board->set_led(LED_RED, false);
           delay((MAX_LED_FADE - fade) >> 4);
         }
 
         for (uint32_t fade = MAX_LED_FADE; fade > 0U; fade -= 1U) {
-          led_set(LED_RED, true);
+          current_board->set_led(LED_RED, true);
           delay(fade >> 4);
-          led_set(LED_RED, false);
+          current_board->set_led(LED_RED, false);
           delay((MAX_LED_FADE - fade) >> 4);
         }
 
       #ifdef DEBUG_FAULTS
       } else {
-          led_set(LED_RED, 1);
+          current_board->set_led(LED_RED, 1);
           delay(512000U);
-          led_set(LED_RED, 0);
+          current_board->set_led(LED_RED, 0);
           delay(512000U);
         }
       #endif

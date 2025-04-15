@@ -31,5 +31,3 @@ uint32_t microsecond_timer_get(void);
 uint32_t microsecond_timer_get(void) {
   return MICROSECOND_TIMER->CNT;
 }
-
-typedef uint32_t GPIO_TypeDef;
