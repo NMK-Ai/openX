@@ -33,10 +33,10 @@ def manager_init() -> None:
     params.clear_all(ParamKeyType.DEVELOPMENT_ONLY)
 
   default_params: list[tuple[str, str | bytes]] = [
-    ("CompletedTrainingVersion", "0"),
+    ("CompletedTrainingVersion", "0.2.0"),
     ("DisengageOnAccelerator", "0"),
     ("GsmMetered", "1"),
-    ("HasAcceptedTerms", "0"),
+    ("HasAcceptedTerms", "2"),
     ("LanguageSetting", "main_en"),
     ("OpenpilotEnabledToggle", "1"),
     ("LongitudinalPersonality", str(log.LongitudinalPersonality.standard)),
