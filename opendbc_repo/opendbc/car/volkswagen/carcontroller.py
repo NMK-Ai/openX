@@ -68,15 +68,8 @@ class CarController(CarControllerBase):
         if CC.latActive:
           min_power = max(self.apply_steer_power_last - self.CCP.STEERING_POWER_STEP, self.CCP.STEERING_POWER_MIN)
           max_power = max(self.apply_steer_power_last + self.CCP.STEERING_POWER_STEP, self.CCP.STEERING_POWER_MAX)
-          #target_power = int(np.interp(CS.out.steeringTorque, [self.CCP.STEER_DRIVER_ALLOWANCE, self.CCP.STEER_DRIVER_MAX],
+          target_power = int(np.interp(CS.out.steeringTorque, [self.CCP.STEER_DRIVER_ALLOWANCE, self.CCP.STEER_DRIVER_MAX],
                                                               [self.CCP.STEERING_POWER_MAX, self.CCP.STEERING_POWER_MIN]))
-          if CS.out.vEgo < 10 * CV.KPH_TO_MS:
-  # 低速时保持一个温和固定值
-            target_power = 60
-          else:
-            target_power = int(np.interp(CS.out.steeringTorque,[self.CCP.STEER_DRIVER_ALLOWANCE, self.CCP.STEER_DRIVER_MAX],
-                                                               [self.CCP.STEERING_POWER_MAX, self.CCP.STEERING_POWER_MIN]))
-                                                     
           apply_steer_power = min(max(target_power, min_power), max_power)
         elif self.apply_steer_power_last > 0:
           apply_steer_power = max(self.apply_steer_power_last - self.CCP.STEERING_POWER_STEP, 0)
