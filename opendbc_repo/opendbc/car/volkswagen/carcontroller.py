@@ -45,15 +45,38 @@ class CarController(CarControllerBase):
       if self.CP.flags & VolkswagenFlags.MEB:
         # The QFK (lateral control coordinator) control loop compares actuation curvature to its own current curvature
         # Calibrate our actuator command by the offset between openpilot's vehicle model and QFK perceived curvatures
-        apply_curvature = actuators.curvature + (CS.qfk_curvature - CC.currentCurvature)
+        #apply_curvature = actuators.curvature + (CS.qfk_curvature - CC.currentCurvature)
+        # === 新增：速度相关低通滤波器 ===
+        alpha_base = 0.2  # 正常情况下的滤波因子
+        low_speed_thresh = 10 * CV.KPH_TO_MS  # 10 km/h 以下视为低速
+        alpha = np.interp(CS.out.vEgo, [0, low_speed_thresh], [0.05, alpha_base])  # 低速更强滤波
+
+# 原始目标曲率
+        target_curvature = actuators.curvature + (CS.qfk_curvature - CC.currentCurvature)
+
+# 曲率滤波处理
+        apply_curvature = alpha * target_curvature + (1 - alpha) * self.apply_curvature_last
+
+# === 限制曲率变化率 ===
+        max_delta = 0.0005  # 每帧最大变化量
+        delta = np.clip(apply_curvature - self.apply_curvature_last, -max_delta, max_delta)
+        apply_curvature = self.apply_curvature_last + delta
+
 
         # Progressive QFK power control: smooth engage and disengage, reduce power when the driver is overriding
         qfk_enable = True
         if CC.latActive:
           min_power = max(self.apply_steer_power_last - self.CCP.STEERING_POWER_STEP, self.CCP.STEERING_POWER_MIN)
           max_power = max(self.apply_steer_power_last + self.CCP.STEERING_POWER_STEP, self.CCP.STEERING_POWER_MAX)
-          target_power = int(np.interp(CS.out.steeringTorque, [self.CCP.STEER_DRIVER_ALLOWANCE, self.CCP.STEER_DRIVER_MAX],
+          #target_power = int(np.interp(CS.out.steeringTorque, [self.CCP.STEER_DRIVER_ALLOWANCE, self.CCP.STEER_DRIVER_MAX],
                                                               [self.CCP.STEERING_POWER_MAX, self.CCP.STEERING_POWER_MIN]))
+          if CS.out.vEgo < 10 * CV.KPH_TO_MS:
+  # 低速时保持一个温和固定值
+            target_power = 60
+          else:
+            target_power = int(np.interp(CS.out.steeringTorque,[self.CCP.STEER_DRIVER_ALLOWANCE, self.CCP.STEER_DRIVER_MAX],
+                                                               [self.CCP.STEERING_POWER_MAX, self.CCP.STEERING_POWER_MIN]))
+                                                     
           apply_steer_power = min(max(target_power, min_power), max_power)
         elif self.apply_steer_power_last > 0:
           apply_steer_power = max(self.apply_steer_power_last - self.CCP.STEERING_POWER_STEP, 0)
