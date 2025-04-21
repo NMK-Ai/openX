@@ -51,13 +51,13 @@ class CarController(CarControllerBase):
         low_speed_thresh = 10 * CV.KPH_TO_MS  # 10 km/h 以下视为低速
         alpha = np.interp(CS.out.vEgo, [0, low_speed_thresh], [0.05, alpha_base])  # 低速更强滤波
 
-# 原始目标曲率
+        # 原始目标曲率
         target_curvature = actuators.curvature + (CS.qfk_curvature - CC.currentCurvature)
 
-# 曲率滤波处理
+        # 曲率滤波处理
         apply_curvature = alpha * target_curvature + (1 - alpha) * self.apply_curvature_last
 
-# === 限制曲率变化率 ===
+        # === 限制曲率变化率 ===
         max_delta = 0.0005  # 每帧最大变化量
         delta = np.clip(apply_curvature - self.apply_curvature_last, -max_delta, max_delta)
         apply_curvature = self.apply_curvature_last + delta
