@@ -227,9 +227,9 @@ class CarState(CarStateBase):
     if not self.CP.enableDsu and not self.CP.flags & ToyotaFlags.DISABLE_RADAR.value:
       ret.stockAeb = bool(cp_acc.vl["PRE_COLLISION"]["PRECOLLISION_ACTIVE"] and cp_acc.vl["PRE_COLLISION"]["FORCE"] < -1e-5)
 
-    #if self.CP.enableBsm:
-      #ret.leftBlindspot = (cp.vl["BSM"]["L_ADJACENT"] == 1) or (cp.vl["BSM"]["L_APPROACHING"] == 1)
-      #ret.rightBlindspot = (cp.vl["BSM"]["R_ADJACENT"] == 1) or (cp.vl["BSM"]["R_APPROACHING"] == 1)
+    if self.CP.enableBsm:
+      ret.leftBlindspot = (cp.vl["BSM"]["L_ADJACENT"] == 1) or (cp.vl["BSM"]["L_APPROACHING"] == 1)
+      ret.rightBlindspot = (cp.vl["BSM"]["R_ADJACENT"] == 1) or (cp.vl["BSM"]["R_APPROACHING"] == 1)
 
     if self.CP.carFingerprint != CAR.TOYOTA_PRIUS_V:
       self.lkas_hud = copy.copy(cp_cam.vl["LKAS_HUD"])
@@ -359,8 +359,8 @@ class CarState(CarStateBase):
     if CP.enableGasInterceptorDEPRECATED:
       messages.append(("GAS_SENSOR", 50))
 
-    #if CP.enableBsm:
-      #messages.append(("BSM", 1))
+    if CP.enableBsm:
+      messages.append(("BSM", 1))
 
     if CP.carFingerprint in RADAR_ACC_CAR and not CP.flags & ToyotaFlags.DISABLE_RADAR.value:
       if not CP.flags & ToyotaFlags.SMART_DSU.value:
