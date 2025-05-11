@@ -942,11 +942,7 @@ def main():
   config_realtime_process(4, Priority.CTRL_HIGH)
   controls = Controls()
   controls.controlsd_thread()
-  sm = messaging.SubMaster(['carState'])
-  cruise_enabled = sm['carState'].cruiseState.enabled
-  if cruise_enabled:
-    subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
-
+  
 
 if __name__ == "__main__":
   main()
