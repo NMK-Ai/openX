@@ -3,6 +3,7 @@ import os
 import numpy as np
 import time
 import tomllib
+import subprocess  # 确保导入 subprocess
 from abc import abstractmethod, ABC
 from difflib import SequenceMatcher
 from enum import StrEnum
