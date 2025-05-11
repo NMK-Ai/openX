@@ -220,7 +220,7 @@ class Controls:
     """Compute onroadEvents from carState"""
 
     self.events.clear()
-    sm = SubMaster(['carState'])
+    sm = messaging.SubMaster(['carState'])
     cruise_enabled = sm['carState'].cruiseState.enabled
     if cruise_enabled:
       subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
