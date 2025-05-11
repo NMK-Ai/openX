@@ -220,15 +220,9 @@ class Controls:
     """Compute onroadEvents from carState"""
 
     self.events.clear()
-    while True:
     
-      CS = sm['carState']
-      CP = sm['controlsState']
-      prev_enabled = False
-
-      enabled = sm['controlsState'].enabled
-      if enabled and not self.prev_enabled:
-        subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
+    if self.enabled:
+      subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
 
     # Add joystick event, static on cars, dynamic on nonCars
     if self.joystick_mode:
