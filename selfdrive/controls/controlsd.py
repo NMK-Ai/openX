@@ -225,8 +225,7 @@ class Controls:
     if self.joystick_mode:
       self.events.add(EventName.joystickDebug)
       self.startup_event = None
-    if self.enabled:
-      subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
+
     # Add startup event
     if self.startup_event is not None:
       self.events.add(self.startup_event)
