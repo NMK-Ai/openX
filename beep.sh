@@ -17,3 +17,5 @@ echo 0 > /sys/class/gpio/gpio42/value
 
 # 取消导出 GPIO42（可选）
 echo 42 > /sys/class/gpio/unexport
+
+exit 0

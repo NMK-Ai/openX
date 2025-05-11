@@ -24,3 +24,5 @@ done
 
 # 取消导出 GPIO42（可选）
 sudo echo 42 > /sys/class/gpio/unexport
+
+exit 0
