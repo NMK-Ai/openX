@@ -220,9 +220,9 @@ class Controls:
     """Compute onroadEvents from carState"""
 
     self.events.clear()
-    sm = messaging.SubMaster(['controlsState'])
-    enabled = sm['controlsState'].enabled
-    if enabled:
+    sm = SubMaster(['carState'])
+    cruise_enabled = sm['carState'].cruiseState.enabled
+    if cruise_enabled:
       subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
 
     # Add joystick event, static on cars, dynamic on nonCars
