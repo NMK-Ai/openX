@@ -222,8 +222,8 @@ class Controls:
     self.events.clear()
     sm = messaging.SubMaster(['controlsState'])
     enabled = sm['controlsState'].enabled
-      if self.enabled:
-        subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
+    if enabled:
+      subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
 
     # Add joystick event, static on cars, dynamic on nonCars
     if self.joystick_mode:
