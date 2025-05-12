@@ -104,7 +104,7 @@ procs = [
   PythonProcess("updated", "system.updated.updated", only_offroad, enabled=not PC),
   PythonProcess("uploader", "system.loggerd.uploader", always_run),
   PythonProcess("statsd", "system.statsd", always_run),
-  PythonProcess("beep", "selfdrive.selfdrive.beep", always_run),
+  PythonProcess("beep", "selfdrive.selfdrived.beep", always_run),
 
   # debug procs
   NativeProcess("bridge", "cereal/messaging", ["./bridge"], notcar),
