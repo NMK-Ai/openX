@@ -23,9 +23,9 @@ class Beepd:
 
   def _beep(self, on):
     subprocess.run(f"echo \"{'1' if on else '0'}\" | sudo tee /sys/class/gpio/gpio42/value",
-               shell=True,
-               stderr=subprocess.STDOUT,
-               encoding='utf8')
+                  shell=True,
+                  stderr=subprocess.STDOUT,
+                  encoding='utf8')
 
 
   def engage(self):
