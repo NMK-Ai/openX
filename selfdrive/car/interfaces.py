@@ -3,7 +3,6 @@ import os
 import numpy as np
 import time
 import tomllib
-import subprocess  # 确保导入 subprocess
 from abc import abstractmethod, ABC
 from difflib import SequenceMatcher
 from enum import StrEnum
@@ -540,11 +539,8 @@ class CarInterfaceBase(ABC):
     if pcm_enable:
       if cs_out.cruiseState.enabled and not self.CS.out.cruiseState.enabled and allow_enable:
         events.add(EventName.pcmEnable)
-        subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
       elif not cs_out.cruiseState.enabled:
         events.add(EventName.pcmDisable)
-        subprocess.run(["sudo", "bash", "/data/openpilot/beep.sh"], check=True)
-
     return events
 
   @staticmethod
