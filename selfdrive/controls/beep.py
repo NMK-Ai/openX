@@ -76,16 +76,16 @@ class Beepd:
         self.dispatch_beep(self.warning)
 
   def get_audible_alert(self, sm):
-    if sm.updated['selfdriveState']:
-      new_alert = sm['selfdriveState'].alertSound.raw
+    if sm.updated['controlsState']:
+      new_alert = sm['controlsState'].alertSound.raw
       self.update_alert(new_alert)
 
   def test_beepd_thread(self):
     frame = 0
     rk = Ratekeeper(20)
-    pm = messaging.PubMaster(['selfdriveState'])
+    pm = messaging.PubMaster(['controlsState'])
     while True:
-      cs = messaging.new_message('selfdriveState')
+      cs = messaging.new_message('controlsState')
       if frame == 20:
         cs.selfdriveState.alertSound = AudibleAlert.engage
       if frame == 40:
@@ -97,7 +97,7 @@ class Beepd:
       if frame == 85:
         cs.selfdriveState.alertSound = AudibleAlert.prompt
 
-      pm.send("selfdriveState", cs)
+      pm.send("controlsState", cs)
       frame += 1
       rk.keep_time()
 
@@ -105,7 +105,7 @@ class Beepd:
     if test:
       threading.Thread(target=self.test_beepd_thread, daemon=True).start()
 
-    sm = messaging.SubMaster(['selfdriveState'])
+    sm = messaging.SubMaster(['controlsState'])
     rk = Ratekeeper(20)
 
     while True:
