@@ -10,10 +10,17 @@ VisualAlert = car.CarControl.HUDControl.VisualAlert
 
 
 def apply_low_speed_steer_smoothing(desired_angle, last_angle, v_ego):
-  # 根据速度限制角度变化速率（单位：度/frame）
-  if v_ego < 5.0:
-    max_delta = 0.5
-  elif v_ego < 15.0:
+  """
+  根据速度限制角度变化速率，单位为角度/帧（deg/frame）
+  速度越低，允许的角度变化越小，以减少方向盘抖动
+  """
+  if v_ego < 3.0:
+    max_delta = 0.2
+  elif v_ego < 10.0:
+    max_delta = 0.4
+  elif v_ego < 20.0:
+    max_delta = 0.8
+  elif v_ego < 35.0:
     max_delta = 1.5
   else:
     max_delta = 3.0
@@ -61,13 +68,9 @@ class CarController(CarControllerBase):
     steer_hud_alert = 1 if hud_control.visualAlert in (VisualAlert.steerRequired, VisualAlert.ldw) else 0
 
     if CC.latActive:
-      # 应用标准限制
       raw_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, CS.out.vEgoRaw, CarControllerParams)
-
-      # 应用低速平滑处理
       apply_angle = apply_low_speed_steer_smoothing(raw_angle, self.apply_angle_last, CS.out.vEgoRaw)
 
-      # 调整最大扭矩限制
       if not bool(CS.out.steeringPressed):
         self.lkas_max_torque = CarControllerParams.LKAS_MAX_TORQUE
       else:
@@ -81,9 +84,11 @@ class CarController(CarControllerBase):
 
     self.apply_angle_last = apply_angle
 
+    # ACC Cancel command for some models
     if self.CP.carFingerprint in (CAR.NISSAN_ROGUE, CAR.NISSAN_XTRAIL, CAR.NISSAN_ALTIMA) and pcm_cancel_cmd:
       can_sends.append(nissancan.create_acc_cancel_cmd(self.packer, self.car_fingerprint, CS.cruise_throttle_msg))
 
+    # For Leaf, cancel via seatbelt spoofing
     if self.CP.carFingerprint in (CAR.NISSAN_LEAF, CAR.NISSAN_LEAF_IC) and self.frame % 2 == 0:
       can_sends.append(nissancan.create_cancel_msg(self.packer, CS.cancel_msg, pcm_cancel_cmd))
 
