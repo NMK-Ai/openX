@@ -9,6 +9,20 @@ from openpilot.selfdrive.car.nissan.values import CAR, CarControllerParams
 VisualAlert = car.CarControl.HUDControl.VisualAlert
 
 
+def apply_low_speed_steer_smoothing(desired_angle, last_angle, v_ego):
+  # 根据速度限制角度变化速率（单位：度/frame）
+  if v_ego < 5.0:
+    max_delta = 0.5
+  elif v_ego < 15.0:
+    max_delta = 1.5
+  else:
+    max_delta = 3.0
+
+  delta = desired_angle - last_angle
+  delta = max(-max_delta, min(max_delta, delta))
+  return last_angle + delta
+
+
 class CarController(CarControllerBase):
   def __init__(self, dbc_name, CP, VM):
     self.CP = CP
@@ -39,7 +53,6 @@ class CarController(CarControllerBase):
       self.disengage_blink = self.frame
 
     blinking_icon = (self.frame - self.disengage_blink) * DT_CTRL < 1.0 if self.lat_disengage_init else False
-
     self.lat_active_last = CC.latActive
 
     can_sends = []
@@ -48,21 +61,20 @@ class CarController(CarControllerBase):
     steer_hud_alert = 1 if hud_control.visualAlert in (VisualAlert.steerRequired, VisualAlert.ldw) else 0
 
     if CC.latActive:
-      # windup slower
-      apply_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, CS.out.vEgoRaw, CarControllerParams)
+      # 应用标准限制
+      raw_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, CS.out.vEgoRaw, CarControllerParams)
 
-      # Max torque from driver before EPS will give up and not apply torque
+      # 应用低速平滑处理
+      apply_angle = apply_low_speed_steer_smoothing(raw_angle, self.apply_angle_last, CS.out.vEgoRaw)
+
+      # 调整最大扭矩限制
       if not bool(CS.out.steeringPressed):
         self.lkas_max_torque = CarControllerParams.LKAS_MAX_TORQUE
       else:
-        # Scale max torque based on how much torque the driver is applying to the wheel
         self.lkas_max_torque = max(
-          # Scale max torque down to half LKAX_MAX_TORQUE as a minimum
           CarControllerParams.LKAS_MAX_TORQUE * 0.5,
-          # Start scaling torque at STEER_THRESHOLD
           CarControllerParams.LKAS_MAX_TORQUE - 0.6 * max(0, abs(CS.out.steeringTorque) - CarControllerParams.STEER_THRESHOLD)
         )
-
     else:
       apply_angle = CS.out.steeringAngleDeg
       self.lkas_max_torque = 0
@@ -72,17 +84,12 @@ class CarController(CarControllerBase):
     if self.CP.carFingerprint in (CAR.NISSAN_ROGUE, CAR.NISSAN_XTRAIL, CAR.NISSAN_ALTIMA) and pcm_cancel_cmd:
       can_sends.append(nissancan.create_acc_cancel_cmd(self.packer, self.car_fingerprint, CS.cruise_throttle_msg))
 
-    # TODO: Find better way to cancel!
-    # For some reason spamming the cancel button is unreliable on the Leaf
-    # We now cancel by making propilot think the seatbelt is unlatched,
-    # this generates a beep and a warning message every time you disengage
     if self.CP.carFingerprint in (CAR.NISSAN_LEAF, CAR.NISSAN_LEAF_IC) and self.frame % 2 == 0:
       can_sends.append(nissancan.create_cancel_msg(self.packer, CS.cancel_msg, pcm_cancel_cmd))
 
     can_sends.append(nissancan.create_steering_control(
       self.packer, apply_angle, self.frame, CC.latActive, self.lkas_max_torque))
 
-    # Below are the HUD messages. We copy the stock message and modify
     if self.CP.carFingerprint != CAR.NISSAN_ALTIMA:
       if self.frame % 2 == 0:
         can_sends.append(nissancan.create_lkas_hud_msg(self.packer, CS.lkas_hud_msg, CC.latActive, blinking_icon, lateral_paused,
