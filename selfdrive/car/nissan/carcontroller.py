@@ -49,22 +49,28 @@ class CarController(CarControllerBase):
     ### STEER ###
     steer_hud_alert = 1 if hud_control.visualAlert in (VisualAlert.steerRequired, VisualAlert.ldw) else 0
     v_ego = CS.out.vEgoRaw
+    raw_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, v_ego, CarControllerParams)
+
+    ### 🚗 最终组合方案五：抖动抑制逻辑 ###
+    if v_ego < 4.0:  # 小于15km/h，几乎锁死，只在角度突变时更新
+      if abs(raw_angle - self.low_speed_hold_angle) > 1.2:
+        self.low_speed_hold_angle = raw_angle
+      apply_angle = self.low_speed_hold_angle
+
+    elif v_ego < 8.33:  # 15~30km/h，每5帧更新1次，死区0.5°
+      if self.low_speed_hold_frames % 5 == 0:
+        if abs(raw_angle - self.low_speed_hold_angle) > 0.5:
+          self.low_speed_hold_angle = raw_angle
+      apply_angle = self.low_speed_hold_angle
+      self.low_speed_hold_frames += 1
+
+    else:
+      apply_angle = raw_angle
+      self.low_speed_hold_angle = raw_angle
+      self.low_speed_hold_frames = 0
+    ### --- End 抖动抑制逻辑 ---
 
     if CC.latActive:
-      raw_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, v_ego, CarControllerParams)
-
-      # 低速方向角减频 + 死区保持
-      if v_ego < 8.33:  # 30km/h
-        if self.low_speed_hold_frames % 5 == 0:
-          if abs(raw_angle - self.low_speed_hold_angle) > 0.5:
-            self.low_speed_hold_angle = raw_angle
-        apply_angle = self.low_speed_hold_angle
-        self.low_speed_hold_frames += 1
-      else:
-        apply_angle = raw_angle
-        self.low_speed_hold_angle = raw_angle
-        self.low_speed_hold_frames = 0
-
       if not CS.out.steeringPressed:
         self.lkas_max_torque = CarControllerParams.LKAS_MAX_TORQUE
       else:
@@ -73,7 +79,6 @@ class CarController(CarControllerBase):
           CarControllerParams.LKAS_MAX_TORQUE - 0.6 * max(0, abs(CS.out.steeringTorque) - CarControllerParams.STEER_THRESHOLD)
         )
     else:
-      apply_angle = CS.out.steeringAngleDeg
       self.lkas_max_torque = 0
 
     self.apply_angle_last = apply_angle
