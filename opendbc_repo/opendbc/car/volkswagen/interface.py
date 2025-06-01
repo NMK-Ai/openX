@@ -44,10 +44,10 @@ class CarInterface(CarInterfaceBase):
       ret.steerControlType = structs.CarParams.SteerControlType.angle
       ret.transmissionType = TransmissionType.automatic
 
-      if any(msg in fingerprint[1] for msg in (0x520, 0x86, 0xFD, 0x13D)):  # Airbag_02, LWI_01, ESP_21, QFK_01
+      if fingerprint[1]:  # Airbag_02, LWI_01, ESP_21, QFK_01
         ret.networkLocation = NetworkLocation.gateway
       else:
-        ret.networkLocation = NetworkLocation.gateway
+        ret.networkLocation = NetworkLocation.fwdCamera
 
     else:
       # Set global MQB parameters
@@ -61,7 +61,7 @@ class CarInterface(CarInterfaceBase):
       else:
         ret.transmissionType = TransmissionType.manual
 
-      if any(msg in fingerprint[1] for msg in (0x40, 0x86, 0xB2, 0xFD)):  # Airbag_01, LWI_01, ESP_19, ESP_21
+      if  fingerprint[1] for msg in (0x40, 0x86, 0xB2, 0xFD)):  # Airbag_01, LWI_01, ESP_19, ESP_21
         ret.networkLocation = NetworkLocation.gateway
       else:
         ret.networkLocation = NetworkLocation.fwdCamera
