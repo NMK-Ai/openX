@@ -47,7 +47,7 @@ class CarInterface(CarInterfaceBase):
       if any(msg in fingerprint[1] for msg in (0x520, 0x86, 0xFD, 0x13D)):  # Airbag_02, LWI_01, ESP_21, QFK_01
         ret.networkLocation = NetworkLocation.gateway
       else:
-        ret.networkLocation = NetworkLocation.fwdCamera
+        ret.networkLocation = NetworkLocation.gateway
 
     else:
       # Set global MQB parameters
