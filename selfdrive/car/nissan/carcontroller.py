@@ -9,6 +9,46 @@ from openpilot.selfdrive.car.nissan.values import CAR, CarControllerParams
 VisualAlert = car.CarControl.HUDControl.VisualAlert
 
 
+class SteerRateLimiter:
+  def __init__(self):
+    self.last_angle = 0.0
+    self.last_delta = 0.0
+
+  def smooth(self, desired_angle, v_ego):
+    """
+    限制角速度和角加速度以防止低速方向盘抖动。
+    """
+    # 起步/停车状态完全锁死方向角
+    if v_ego < 0.5:
+      return self.last_angle
+
+    # 各速度段对应最大角速度（deg/frame）
+    if v_ego < 3:
+      max_delta = 0.2
+    elif v_ego < 10:
+      max_delta = 0.5
+    elif v_ego < 25:
+      max_delta = 1.0
+    else:
+      max_delta = 2.5
+
+    # 限制角速度
+    raw_delta = desired_angle - self.last_angle
+    delta = max(-max_delta, min(max_delta, raw_delta))
+
+    # 限制角加速度（避免角度跳变）
+    max_delta_delta = 0.3  # deg/frame²
+    delta_delta = delta - self.last_delta
+    delta_delta = max(-max_delta_delta, min(max_delta_delta, delta_delta))
+
+    # 更新状态
+    delta = self.last_delta + delta_delta
+    self.last_delta = delta
+    self.last_angle += delta
+
+    return self.last_angle
+
+
 class CarController(CarControllerBase):
   def __init__(self, dbc_name, CP, VM):
     self.CP = CP
@@ -24,8 +64,7 @@ class CarController(CarControllerBase):
     self.lat_disengage_init = False
     self.lat_active_last = False
 
-    self.low_speed_hold_frames = 0
-    self.low_speed_hold_angle = 0.0
+    self.steer_limiter = SteerRateLimiter()
 
   def update(self, CC, CS, now_nanos):
     actuators = CC.actuators
@@ -42,36 +81,20 @@ class CarController(CarControllerBase):
       self.disengage_blink = self.frame
 
     blinking_icon = (self.frame - self.disengage_blink) * DT_CTRL < 1.0 if self.lat_disengage_init else False
+
     self.lat_active_last = CC.latActive
 
     can_sends = []
 
     ### STEER ###
     steer_hud_alert = 1 if hud_control.visualAlert in (VisualAlert.steerRequired, VisualAlert.ldw) else 0
-    v_ego = CS.out.vEgoRaw
-    raw_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, v_ego, CarControllerParams)
-
-    ### 🚗 最终组合方案五：抖动抑制逻辑 ###
-    if v_ego < 4.0:  # 小于15km/h，几乎锁死，只在角度突变时更新
-      if abs(raw_angle - self.low_speed_hold_angle) > 1.2:
-        self.low_speed_hold_angle = raw_angle
-      apply_angle = self.low_speed_hold_angle
-
-    elif v_ego < 8.33:  # 15~30km/h，每5帧更新1次，死区0.5°
-      if self.low_speed_hold_frames % 5 == 0:
-        if abs(raw_angle - self.low_speed_hold_angle) > 0.5:
-          self.low_speed_hold_angle = raw_angle
-      apply_angle = self.low_speed_hold_angle
-      self.low_speed_hold_frames += 1
-
-    else:
-      apply_angle = raw_angle
-      self.low_speed_hold_angle = raw_angle
-      self.low_speed_hold_frames = 0
-    ### --- End 抖动抑制逻辑 ---
 
     if CC.latActive:
-      if not CS.out.steeringPressed:
+      raw_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, CS.out.vEgoRaw, CarControllerParams)
+      apply_angle = self.steer_limiter.smooth(raw_angle, CS.out.vEgoRaw)
+
+      # 方向盘扭力安全判断
+      if not bool(CS.out.steeringPressed):
         self.lkas_max_torque = CarControllerParams.LKAS_MAX_TORQUE
       else:
         self.lkas_max_torque = max(
@@ -79,19 +102,24 @@ class CarController(CarControllerBase):
           CarControllerParams.LKAS_MAX_TORQUE - 0.6 * max(0, abs(CS.out.steeringTorque) - CarControllerParams.STEER_THRESHOLD)
         )
     else:
+      apply_angle = CS.out.steeringAngleDeg
       self.lkas_max_torque = 0
 
     self.apply_angle_last = apply_angle
 
+    # ACC Cancel 命令
     if self.CP.carFingerprint in (CAR.NISSAN_ROGUE, CAR.NISSAN_XTRAIL, CAR.NISSAN_ALTIMA) and pcm_cancel_cmd:
       can_sends.append(nissancan.create_acc_cancel_cmd(self.packer, self.car_fingerprint, CS.cruise_throttle_msg))
 
+    # 对于 Leaf，使用座椅解锁模拟取消
     if self.CP.carFingerprint in (CAR.NISSAN_LEAF, CAR.NISSAN_LEAF_IC) and self.frame % 2 == 0:
       can_sends.append(nissancan.create_cancel_msg(self.packer, CS.cancel_msg, pcm_cancel_cmd))
 
+    # 发送方向控制
     can_sends.append(nissancan.create_steering_control(
       self.packer, apply_angle, self.frame, CC.latActive, self.lkas_max_torque))
 
+    # HUD 显示
     if self.CP.carFingerprint != CAR.NISSAN_ALTIMA:
       if self.frame % 2 == 0:
         can_sends.append(nissancan.create_lkas_hud_msg(self.packer, CS.lkas_hud_msg, CC.latActive, blinking_icon, lateral_paused,
@@ -103,6 +131,7 @@ class CarController(CarControllerBase):
           self.packer, CS.lkas_hud_info_msg, steer_hud_alert
         ))
 
+    # 实际输出角度记录
     new_actuators = actuators.as_builder()
     new_actuators.steeringAngleDeg = apply_angle
 
