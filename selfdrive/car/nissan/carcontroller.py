@@ -13,22 +13,28 @@ class SteerRateLimiter:
   def __init__(self):
     self.last_angle = 0.0
     self.last_delta = 0.0
+    self.filtered_target = 0.0  # 新增：用于低通滤波
 
   def smooth(self, desired_angle, v_ego):
     """
-    限制角速度和角加速度以防止低速方向盘抖动。
+    限制角速度和角加速度，并加入一阶低通滤波以防止低速方向盘抖动。
     """
     # 起步/停车状态完全锁死方向角
     if v_ego < 0.5:
       return self.last_angle
 
+    # 一阶低通滤波器
+    alpha = 0.2 if v_ego < 10 else 0.5
+    self.filtered_target = (1 - alpha) * self.filtered_target + alpha * desired_angle
+    desired_angle = self.filtered_target
+
     # 各速度段对应最大角速度（deg/frame）
     if v_ego < 3:
-      max_delta = 0.2
+      max_delta = 0.05
     elif v_ego < 10:
-      max_delta = 0.5
+      max_delta = 0.2
     elif v_ego < 25:
-      max_delta = 1.0
+      max_delta = 0.8
     else:
       max_delta = 2.5
 
@@ -93,7 +99,6 @@ class CarController(CarControllerBase):
       raw_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, CS.out.vEgoRaw, CarControllerParams)
       apply_angle = self.steer_limiter.smooth(raw_angle, CS.out.vEgoRaw)
 
-      # 方向盘扭力安全判断
       if not bool(CS.out.steeringPressed):
         self.lkas_max_torque = CarControllerParams.LKAS_MAX_TORQUE
       else:
@@ -111,11 +116,10 @@ class CarController(CarControllerBase):
     if self.CP.carFingerprint in (CAR.NISSAN_ROGUE, CAR.NISSAN_XTRAIL, CAR.NISSAN_ALTIMA) and pcm_cancel_cmd:
       can_sends.append(nissancan.create_acc_cancel_cmd(self.packer, self.car_fingerprint, CS.cruise_throttle_msg))
 
-    # 对于 Leaf，使用座椅解锁模拟取消
     if self.CP.carFingerprint in (CAR.NISSAN_LEAF, CAR.NISSAN_LEAF_IC) and self.frame % 2 == 0:
       can_sends.append(nissancan.create_cancel_msg(self.packer, CS.cancel_msg, pcm_cancel_cmd))
 
-    # 发送方向控制
+    # 方向盘控制
     can_sends.append(nissancan.create_steering_control(
       self.packer, apply_angle, self.frame, CC.latActive, self.lkas_max_torque))
 
@@ -131,7 +135,7 @@ class CarController(CarControllerBase):
           self.packer, CS.lkas_hud_info_msg, steer_hud_alert
         ))
 
-    # 实际输出角度记录
+    # 输出角度记录
     new_actuators = actuators.as_builder()
     new_actuators.steeringAngleDeg = apply_angle
 
