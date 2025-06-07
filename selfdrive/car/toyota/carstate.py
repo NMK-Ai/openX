@@ -400,11 +400,11 @@ class CarState(CarStateBase):
         ("LKAS_HUD", 1),
       ]
 
-    #if CP.carFingerprint in (TSS2_CAR - RADAR_ACC_CAR):
+    if CP.carFingerprint in (TSS2_CAR - RADAR_ACC_CAR):
       #messages += [
         #("PRE_COLLISION", 33),
-        #("ACC_CONTROL", 33),
-        #("PCS_HUD", 1),
+        ("ACC_CONTROL", 33),
+        ("PCS_HUD", 1),
       #]
 
     return CANParser(DBC[CP.carFingerprint]["pt"], messages, 2)
