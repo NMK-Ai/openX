@@ -224,8 +224,8 @@ class CarState(CarStateBase):
     ret.genericToggle = bool(cp.vl["LIGHT_STALK"]["AUTO_HIGH_BEAM"])
     ret.espDisabled = cp.vl["ESP_CONTROL"]["TC_DISABLED"] != 0
 
-    if not self.CP.enableDsu and not self.CP.flags & ToyotaFlags.DISABLE_RADAR.value:
-      ret.stockAeb = bool(cp_acc.vl["PRE_COLLISION"]["PRECOLLISION_ACTIVE"] and cp_acc.vl["PRE_COLLISION"]["FORCE"] < -1e-5)
+    #if not self.CP.enableDsu and not self.CP.flags & ToyotaFlags.DISABLE_RADAR.value:
+      #ret.stockAeb = bool(cp_acc.vl["PRE_COLLISION"]["PRECOLLISION_ACTIVE"] and cp_acc.vl["PRE_COLLISION"]["FORCE"] < -1e-5)
 
     if self.CP.enableBsm:
       ret.leftBlindspot = (cp.vl["BSM"]["L_ADJACENT"] == 1) or (cp.vl["BSM"]["L_APPROACHING"] == 1)
@@ -371,10 +371,10 @@ class CarState(CarStateBase):
         ("PCS_HUD", 1),
       ]
 
-    if CP.carFingerprint not in (TSS2_CAR - RADAR_ACC_CAR) and not CP.enableDsu and not CP.flags & ToyotaFlags.DISABLE_RADAR.value:
-      messages += [
-        ("PRE_COLLISION", 33),
-      ]
+    #if CP.carFingerprint not in (TSS2_CAR - RADAR_ACC_CAR) and not CP.enableDsu and not CP.flags & ToyotaFlags.DISABLE_RADAR.value:
+      #messages += [
+        #("PRE_COLLISION", 33),
+      #]
 
     if CP.flags & ToyotaFlags.SMART_DSU and not CP.flags & ToyotaFlags.RADAR_CAN_FILTER:
       messages += [
@@ -400,11 +400,11 @@ class CarState(CarStateBase):
         ("LKAS_HUD", 1),
       ]
 
-    if CP.carFingerprint in (TSS2_CAR - RADAR_ACC_CAR):
-      messages += [
-        ("PRE_COLLISION", 33),
-        ("ACC_CONTROL", 33),
-        ("PCS_HUD", 1),
-      ]
+    #if CP.carFingerprint in (TSS2_CAR - RADAR_ACC_CAR):
+      #messages += [
+        #("PRE_COLLISION", 33),
+        #("ACC_CONTROL", 33),
+        #("PCS_HUD", 1),
+      #]
 
     return CANParser(DBC[CP.carFingerprint]["pt"], messages, 2)
