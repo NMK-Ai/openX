@@ -45,7 +45,7 @@ class CarInterface(CarInterfaceBase):
       ret.transmissionType = TransmissionType.automatic
 
       if fingerprint[1]:  # Airbag_02, LWI_01, ESP_21, QFK_01
-        ret.networkLocation = NetworkLocation.gateway
+        ret.networkLocation = NetworkLocation.fwdCamera
       else:
         ret.networkLocation = NetworkLocation.fwdCamera
 
