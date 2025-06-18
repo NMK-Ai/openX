@@ -66,6 +66,7 @@ def register(show_spinner=False) -> str | None:
     if not serial_allowed(serial):
       cloudlog.warning(f"Serial {serial} not in whitelist, blocking registration")
       while True:
+        set_offroad_alert("Offroad_UnofficialHardware")
         time.sleep(60000000000000000000000000)  # 阻塞程序
 
     # 设置设备信息
