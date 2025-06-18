@@ -2,12 +2,9 @@
 import time
 import json
 import jwt
-import requests
-from io import BytesIO
-import openpyxl
 from pathlib import Path
-from datetime import datetime, timedelta
 
+from datetime import datetime, timedelta
 from openpilot.common.api import api_get
 from openpilot.common.params import Params
 from openpilot.common.spinner import Spinner
@@ -16,27 +13,14 @@ from openpilot.system.hardware import HARDWARE, PC
 from openpilot.system.hardware.hw import Paths
 from openpilot.common.swaglog import cloudlog
 
+
 UNREGISTERED_DONGLE_ID = "UnregisteredDevice"
-WHITELIST_URL = "https://mr-one.cn/whitelist.xlsx"  # 替换为你的服务器 Excel 地址
+
 
 def is_registered_device() -> bool:
   dongle = Params().get("DongleId", encoding='utf-8')
   return dongle not in (None, UNREGISTERED_DONGLE_ID)
 
-def serial_allowed(serial: str) -> bool:
-  try:
-    cloudlog.info(f"Fetching whitelist from {WHITELIST_URL}")
-    r = requests.get(WHITELIST_URL, timeout=10)
-    r.raise_for_status()
-
-    wb = openpyxl.load_workbook(filename=BytesIO(r.content))
-    ws = wb.active
-
-    allowed_serials = {str(cell.value).strip() for cell in ws['A'] if cell.value is not None}
-    return serial in allowed_serials
-  except Exception as e:
-    cloudlog.exception("Failed to fetch or parse whitelist")
-    return False
 
 def register(show_spinner=False) -> str | None:
   params = Params()
@@ -60,17 +44,13 @@ def register(show_spinner=False) -> str | None:
       public_key = f1.read()
       private_key = f2.read()
 
+    # Block until we get the imei
     serial = HARDWARE.get_serial()
-
-    # 验证是否在白名单中
-   
-
-    # 设置设备信息
-    imei1 = '865420071781912'
-    imei2 = '865420071781904'
+    start_time = time.monotonic()
+    imei1='865420071781912'
+    imei2='865420071781904'
     params.put("IMEI", imei1)
     params.put("HardwareSerial", serial)
-
     backoff = 0
     start_time = time.monotonic()
     while True:
@@ -92,6 +72,7 @@ def register(show_spinner=False) -> str | None:
         backoff = min(backoff + 1, 15)
         time.sleep(backoff)
 
+
       if time.monotonic() - start_time > 10 and show_spinner:
         return UNREGISTERED_DONGLE_ID
 
@@ -100,8 +81,9 @@ def register(show_spinner=False) -> str | None:
 
   if dongle_id:
     params.put("DongleId", dongle_id)
-    # set_offroad_alert("Offroad_UnofficialHardware", (dongle_id == UNREGISTERED_DONGLE_ID) and not PC)
+    #set_offroad_alert("Offroad_UnofficialHardware", (dongle_id == UNREGISTERED_DONGLE_ID) and not PC)
   return dongle_id
+
 
 if __name__ == "__main__":
   print(register())
