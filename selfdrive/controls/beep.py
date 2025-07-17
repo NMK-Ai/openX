@@ -11,7 +11,7 @@ class Beepd:
   def __init__(self):
     self.current_alert = AudibleAlert.none
     self.enable_gpio()
-    self.startup_beep()
+    #self.startup_beep()
 
   def enable_gpio(self):
     # 尝试 export，忽略已 export 的错误
