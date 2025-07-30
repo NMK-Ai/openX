@@ -86,10 +86,10 @@ class Beepd:
     pm = messaging.PubMaster(['controlsState'])
     while True:
       cs = messaging.new_message('controlsState')
-      if frame == 20:
-        cs.selfdriveState.alertSound = AudibleAlert.engage
-      if frame == 40:
-        cs.selfdriveState.alertSound = AudibleAlert.disengage
+      #if frame == 20:
+        #cs.selfdriveState.alertSound = AudibleAlert.engage
+      #if frame == 40:
+        #cs.selfdriveState.alertSound = AudibleAlert.disengage
       if frame == 60:
         cs.selfdriveState.alertSound = AudibleAlert.prompt
       if frame == 80:
