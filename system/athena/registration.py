@@ -58,7 +58,7 @@ def register(show_spinner=False) -> str:
                     dongle_id = data.get("dongle_id", UNREGISTERED_DONGLE_ID)
                     if dongle_id != UNREGISTERED_DONGLE_ID:
                         # 如果真的注册成功了，break也没意义，可以删掉break让它一直卡着
-                        # break
+                        break
                         pass
                     else:
                         cloudlog.info("Device not in whitelist, retrying...")
