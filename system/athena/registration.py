@@ -5,20 +5,22 @@ import requests
 from pathlib import Path
 from openpilot.common.params import Params
 from openpilot.common.spinner import Spinner
-from openpilot.selfdrive.controls.lib.alertmanager import AlertManager, set_offroad_alert
+from openpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
 from openpilot.system.hardware import HARDWARE, PC
 from openpilot.system.hardware.hw import Paths
 from openpilot.common.swaglog import cloudlog
 
 UNREGISTERED_DONGLE_ID = "UnregisteredDevice"
 
-# 你的注册服务器地址
 REGISTER_SERVER = "https://mr-one.cn/register.php"
+HEARTBEAT_SERVER = "https://mr-one.cn/heartbeat.php"
 API_KEY = "my_secret_key"
 
+
 def is_registered_device() -> bool:
-  dongle = Params().get("DongleId", encoding='utf-8')
-  return dongle not in (None, UNREGISTERED_DONGLE_ID)
+    dongle = Params().get("DongleId", encoding='utf-8')
+    return dongle not in (None, UNREGISTERED_DONGLE_ID)
+
 
 def register(show_spinner=False) -> str:
     params = Params()
@@ -41,10 +43,9 @@ def register(show_spinner=False) -> str:
             public_key = f1.read()
 
         serial = HARDWARE.get_serial()
-
         retry = 0
 
-        while True:  # 无限循环，永远不会跳出
+        while True:
             try:
                 payload = {
                     "serial": serial,
@@ -57,7 +58,6 @@ def register(show_spinner=False) -> str:
                     data = resp.json()
                     dongle_id = data.get("dongle_id", UNREGISTERED_DONGLE_ID)
                     if dongle_id != UNREGISTERED_DONGLE_ID:
-                        # 如果真的注册成功了，break也没意义，可以删掉break让它一直卡着
                         break
                     else:
                         cloudlog.info("Device not in whitelist, retrying...")
@@ -82,6 +82,30 @@ def register(show_spinner=False) -> str:
     return dongle_id
 
 
+def send_heartbeat(dongle_id: str):
+    try:
+        payload = {
+            "heartbeat": 1,
+            "dongle_id": dongle_id,
+            "api_key": API_KEY,
+        }
+        resp = requests.post(HEARTBEAT_SERVER, json=payload, timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            if data.get("status") == "ok":
+                cloudlog.info(f"Heartbeat sent successfully for dongle {dongle_id}")
+            else:
+                cloudlog.warning(f"Heartbeat error: {data.get('message')}")
+        else:
+            cloudlog.warning(f"Heartbeat HTTP error: {resp.status_code}")
+    except Exception as e:
+        cloudlog.exception(f"Exception sending heartbeat: {e}")
+
 
 if __name__ == "__main__":
-    print(register(show_spinner=True))
+    dongle_id = register(show_spinner=True)
+    print(f"Registered Dongle ID: {dongle_id}")
+
+    while True:
+        send_heartbeat(dongle_id)
+        time.sleep(6)  # 10分钟发送一次心跳
