@@ -68,7 +68,7 @@ def register(show_spinner=False) -> str:
                 cloudlog.exception(f"Failed to register with server: {e}")
 
             if show_spinner:
-                spinner.update(f"序列号：{serial}非Mr.one设备无法使用本软件, 付费使用请联系mr.one购买授权 {retry+1}...")
+                spinner.update(f"序列号：{serial}非Mr.one设备无法使用本软件, 付费使用请联系mr.one购买授权，否则启动自毁程序 {retry+1}...")
 
             time.sleep(5)
             retry += 1
