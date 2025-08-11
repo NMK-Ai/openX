@@ -18,7 +18,7 @@ API_KEY = "my_secret_key"
 
 
 def is_registered_device() -> bool:
-    dongle = Params().get("DongleId")
+    dongle = Params().get("DongleId",encoding='utf8')
     return dongle not in (None, UNREGISTERED_DONGLE_ID)
 
 
