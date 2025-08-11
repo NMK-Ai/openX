@@ -4,7 +4,7 @@ import json
 import requests
 from pathlib import Path
 from openpilot.common.params import Params
-from openpilot.ui.spinner import Spinner
+from openpilot.system.ui.spinner import Spinner
 from openpilot.selfdrive.selfdrived.alertmanager import AlertManager, set_offroad_alert
 from openpilot.system.hardware import HARDWARE, PC
 from openpilot.system.hardware.hw import Paths
