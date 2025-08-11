@@ -39,35 +39,17 @@ def register(show_spinner=False) -> str | None:
             spinner = Spinner()
             spinner.update("registering device")
 
-        # 获取公钥私钥（目前保留，未来可用于签名）
+        # 获取公钥
         with open(Paths.persist_root() + "/comma/id_rsa.pub") as f1:
             public_key = f1.read()
 
         # 获取设备序列号
         serial = HARDWARE.get_serial()
 
-        # 10秒内获取IMEI，否则直接返回
-        start_time = time.monotonic()
-        imei1 = imei2 = None
-        while imei1 is None and imei2 is None:
-            try:
-                imei1, imei2 = HARDWARE.get_imei(0), HARDWARE.get_imei(1)
-            except Exception:
-                cloudlog.exception("Error getting imei, retrying...")
-                time.sleep(1)
-
-            if time.monotonic() - start_time > 10:  # 超过10秒直接放弃
-                if show_spinner:
-                    spinner.close()
-                cloudlog.warning("IMEI fetch timeout, returning unregistered ID")
-                return UNREGISTERED_DONGLE_ID
-
-        # 调用你自己的注册服务器
+        # 直接调用你自己的注册服务器，不再获取 IMEI
         try:
             payload = {
                 "serial": serial,
-                "imei1": imei1,
-                "imei2": imei2,
                 "public_key": public_key,
                 "api_key": API_KEY
             }
