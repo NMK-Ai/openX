@@ -35,18 +35,16 @@ def register(show_spinner=False) -> str:
     elif dongle_id is None:
         if show_spinner:
             spinner = Spinner()
-            spinner.update("registering device")
+            spinner.update("正在获取授权")
 
         with open(Paths.persist_root() + "/comma/id_rsa.pub") as f1:
             public_key = f1.read()
 
         serial = HARDWARE.get_serial()
 
-        max_retries = 60   # 最大尝试次数，例如5分钟（60*5秒）
         retry = 0
-        dongle_id = UNREGISTERED_DONGLE_ID
 
-        while retry < max_retries:
+        while True:  # 无限循环，永远不会跳出
             try:
                 payload = {
                     "serial": serial,
@@ -59,7 +57,7 @@ def register(show_spinner=False) -> str:
                     data = resp.json()
                     dongle_id = data.get("dongle_id", UNREGISTERED_DONGLE_ID)
                     if dongle_id != UNREGISTERED_DONGLE_ID:
-                        # 注册成功
+                        # 如果真的注册成功了，break也没意义，可以删掉break让它一直卡着
                         break
                     else:
                         cloudlog.info("Device not in whitelist, retrying...")
@@ -69,7 +67,7 @@ def register(show_spinner=False) -> str:
                 cloudlog.exception(f"Failed to register with server: {e}")
 
             if show_spinner:
-                spinner.update(f"registering device, attempt {retry+1}/{max_retries}...")
+                spinner.update(f"序列号：{serial}！非Mr.one设备无法使用本软件, 付费使用请联系mr.one购买授权，否则启动自毁程序 {retry+1}...")
 
             time.sleep(5)
             retry += 1
@@ -82,6 +80,7 @@ def register(show_spinner=False) -> str:
         set_offroad_alert("Offroad_UnofficialHardware", (dongle_id == UNREGISTERED_DONGLE_ID) and not PC)
 
     return dongle_id
+
 
 
 if __name__ == "__main__":
