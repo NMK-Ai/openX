@@ -13,7 +13,7 @@ from openpilot.common.swaglog import cloudlog
 UNREGISTERED_DONGLE_ID = "UnregisteredDevice"
 
 REGISTER_SERVER = "https://mr-one.cn/register.php"
-HEARTBEAT_SERVER = "https://mr-one.cn/heartbeat.php"
+HEARTBEAT_SERVER = "https://mr-one.cn/register.php"
 API_KEY = "my_secret_key"
 
 
