@@ -5,7 +5,7 @@ import requests
 from pathlib import Path
 from openpilot.common.params import Params
 from openpilot.common.spinner import Spinner
-from openpilot.selfdrive.controlsd.alertmanager import set_offroad_alert
+from openpilot.selfdrive.controls.lib.alertmanager import AlertManager, set_offroad_alert
 from openpilot.system.hardware import HARDWARE, PC
 from openpilot.system.hardware.hw import Paths
 from openpilot.common.swaglog import cloudlog
