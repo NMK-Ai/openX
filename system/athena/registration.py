@@ -16,6 +16,10 @@ UNREGISTERED_DONGLE_ID = "UnregisteredDevice"
 REGISTER_SERVER = "https://mr-one.cn/register.php"
 API_KEY = "my_secret_key"
 
+def is_registered_device() -> bool:
+  dongle = Params().get("DongleId", encoding='utf-8')
+  return dongle not in (None, UNREGISTERED_DONGLE_ID)
+
 def register(show_spinner=False) -> str:
     params = Params()
 
