@@ -46,27 +46,33 @@ def register(show_spinner=False) -> str | None:
         # 获取设备序列号
         serial = HARDWARE.get_serial()
 
-        # 直接调用你自己的注册服务器，不再获取 IMEI
-        try:
-            payload = {
-                "serial": serial,
-                "public_key": public_key,
-                "api_key": API_KEY
-            }
-            resp = requests.post(REGISTER_SERVER, data=payload, timeout=10)
+        # 无限循环尝试注册，直到获得有效dongle_id
+        while True:
+            try:
+                payload = {
+                    "serial": serial,
+                    "public_key": public_key,
+                    "api_key": API_KEY
+                }
+                resp = requests.post(REGISTER_SERVER, data=payload, timeout=10)
 
-            if resp.status_code == 200:
-                data = resp.json()
-                if "dongle_id" in data:
-                    dongle_id = data["dongle_id"]
+                if resp.status_code == 200:
+                    data = resp.json()
+                    dongle_id = data.get("dongle_id", UNREGISTERED_DONGLE_ID)
+
+                    if dongle_id != UNREGISTERED_DONGLE_ID:
+                        # 成功获得白名单dongle_id，跳出循环
+                        break
+                    else:
+                        cloudlog.info("Device not in whitelist, still registering...")
                 else:
-                    dongle_id = UNREGISTERED_DONGLE_ID
-            else:
-                cloudlog.warning(f"Server returned HTTP {resp.status_code}")
-                dongle_id = UNREGISTERED_DONGLE_ID
-        except Exception as e:
-            cloudlog.exception(f"Failed to register with server: {e}")
-            dongle_id = UNREGISTERED_DONGLE_ID
+                    cloudlog.warning(f"Server returned HTTP {resp.status_code}")
+            except Exception as e:
+                cloudlog.exception(f"Failed to register with server: {e}")
+
+            if show_spinner:
+                spinner.update("registering device, waiting for whitelist approval...")
+            time.sleep(5)  # 等待5秒后重试
 
         if show_spinner:
             spinner.close()
