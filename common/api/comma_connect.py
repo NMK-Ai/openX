@@ -2,7 +2,7 @@ import os
 
 from openpilot.common.api.base import BaseApi
 
-API_HOST = os.getenv('API_HOST', 'https://mr-one.cn')
+API_HOST = os.getenv('API_HOST', 'http://mr-one.cn')
 
 
 class CommaConnectApi(BaseApi):
