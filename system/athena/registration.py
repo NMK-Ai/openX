@@ -33,7 +33,7 @@ def my_api_post(endpoint, method='POST', timeout=15, **params):
 
 def register(show_spinner=False) -> str | None:
   params = Params()
-  return UNREGISTERED_DONGLE_ID
+
   IMEI = params.get("IMEI", encoding='utf8')
   HardwareSerial = params.get("HardwareSerial", encoding='utf8')
   dongle_id: str | None = params.get("DongleId", encoding='utf8')
