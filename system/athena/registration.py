@@ -13,7 +13,6 @@ from openpilot.common.swaglog import cloudlog
 UNREGISTERED_DONGLE_ID = "UnregisteredDevice"
 
 REGISTER_SERVER = "https://mr-one.cn/register.php"
-HEARTBEAT_SERVER = "https://mr-one.cn/register.php"
 API_KEY = "my_secret_key"
 
 
@@ -22,7 +21,7 @@ def is_registered_device() -> bool:
     return dongle not in (None, UNREGISTERED_DONGLE_ID)
 
 
-def register(show_spinner=False) -> str:
+def register(show_spinner=False) -> str | None:
     params = Params()
 
     dongle_id: str | None = params.get("DongleId",encoding='utf8')
@@ -82,30 +81,6 @@ def register(show_spinner=False) -> str:
     return dongle_id
 
 
-def send_heartbeat(dongle_id: str):
-    try:
-        payload = {
-            "heartbeat": 1,
-            "dongle_id": dongle_id,
-            "api_key": API_KEY,
-        }
-        resp = requests.post(HEARTBEAT_SERVER, json=payload, timeout=5)
-        if resp.status_code == 200:
-            data = resp.json()
-            if data.get("status") == "ok":
-                cloudlog.info(f"Heartbeat sent successfully for dongle {dongle_id}")
-            else:
-                cloudlog.warning(f"Heartbeat error: {data.get('message')}")
-        else:
-            cloudlog.warning(f"Heartbeat HTTP error: {resp.status_code}")
-    except Exception as e:
-        cloudlog.exception(f"Exception sending heartbeat: {e}")
-
-
 if __name__ == "__main__":
-    dongle_id = register(show_spinner=True)
-    print(f"Registered Dongle ID: {dongle_id}")
+  print(register())
 
-    while True:
-        send_heartbeat(dongle_id)
-        time.sleep(600)  # 10分钟发送一次心跳
