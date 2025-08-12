@@ -25,7 +25,7 @@ def is_registered_device() -> bool:
 def register(show_spinner=False) -> str:
     params = Params()
 
-    dongle_id: str | None = params.get("DongleId")
+    dongle_id: str | None = params.get("DongleId",encoding='utf8')
     if dongle_id is None and Path(Paths.persist_root() + "/comma/dongle_id").is_file():
         with open(Paths.persist_root() + "/comma/dongle_id") as f:
             dongle_id = f.read().strip()
