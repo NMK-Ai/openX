@@ -21,15 +21,6 @@ def is_registered_device() -> bool:
   dongle = Params().get("DongleId", encoding='utf-8')
   return dongle not in (None, UNREGISTERED_DONGLE_ID)
 
-def my_api_post(endpoint, method='POST', timeout=15, **params):
-    import requests
-    url = "https://mr-one.cn/" + endpoint
-    if method.upper() == 'POST':
-        resp = requests.post(url, json=params, timeout=timeout)
-        resp.raise_for_status()
-        return resp.json()
-    else:
-        raise NotImplementedError("只支持POST方法")
 
 def register(show_spinner=False) -> str | None:
   params = Params()
@@ -77,7 +68,7 @@ def register(show_spinner=False) -> str | None:
       try:
         register_token = jwt.encode({'register': True, 'exp': datetime.utcnow() + timedelta(hours=1)}, private_key, algorithm='RS256')
         cloudlog.info("getting pilotauth")
-        resp = api_get("https://mr-one.cn/v2/pilotauth", method='POST', timeout=15,
+        resp = api_get("v2/pilotauth", method='POST', timeout=15,
                        imei=imei1, imei2=imei2, serial=serial, public_key=public_key, register_token=register_token)
 
         if resp.status_code in (402, 403):
