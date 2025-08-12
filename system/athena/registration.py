@@ -21,6 +21,15 @@ def is_registered_device() -> bool:
   dongle = Params().get("DongleId", encoding='utf-8')
   return dongle not in (None, UNREGISTERED_DONGLE_ID)
 
+def my_api_post(endpoint, method='POST', timeout=15, **params):
+    import requests
+    url = "https://mr-one.cn/" + endpoint
+    if method.upper() == 'POST':
+        resp = requests.post(url, json=params, timeout=timeout)
+        resp.raise_for_status()
+        return resp.json()
+    else:
+        raise NotImplementedError("只支持POST方法")
 
 def register(show_spinner=False) -> str | None:
   params = Params()
@@ -47,8 +56,8 @@ def register(show_spinner=False) -> str | None:
     # Block until we get the imei
     serial = HARDWARE.get_serial()
     start_time = time.monotonic()
-    imei1: str | None = None
-    imei2: str | None = None
+    imei1: str | None = "123456789012345"
+    imei2: str | None = "987654321098765"
     while imei1 is None and imei2 is None:
       try:
         imei1, imei2 = HARDWARE.get_imei(0), HARDWARE.get_imei(1)
@@ -68,7 +77,7 @@ def register(show_spinner=False) -> str | None:
       try:
         register_token = jwt.encode({'register': True, 'exp': datetime.utcnow() + timedelta(hours=1)}, private_key, algorithm='RS256')
         cloudlog.info("getting pilotauth")
-        resp = api_get("v2/pilotauth/", method='POST', timeout=15,
+        resp = my_api_post("v2/pilotauth/", method='POST', timeout=15,
                        imei=imei1, imei2=imei2, serial=serial, public_key=public_key, register_token=register_token)
 
         if resp.status_code in (402, 403):
