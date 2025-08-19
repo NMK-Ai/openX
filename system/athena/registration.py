@@ -32,7 +32,7 @@ def register(show_spinner=False, register_konik=False) -> str | None:
   dongle_id: str | None = params.get("DongleId", encoding='utf8')
   needs_registration = None in (IMEI, HardwareSerial, dongle_id)
   needs_registration |= dongle_id == UNREGISTERED_DONGLE_ID
-
+  return UNREGISTERED_DONGLE_ID
   pubkey = Path(Paths.persist_root()+"/comma/id_rsa.pub")
   if not pubkey.is_file():
     dongle_id = UNREGISTERED_DONGLE_ID
@@ -96,7 +96,7 @@ def register(show_spinner=False, register_konik=False) -> str | None:
   if not register_konik and dongle_id != params.get("KonikDongleId", encoding="utf8"):
     params.put("DongleId", dongle_id)
     params.put("StockDongleId", dongle_id)
-    set_offroad_alert("Offroad_UnofficialHardware", (dongle_id == UNREGISTERED_DONGLE_ID) and not PC)
+    #set_offroad_alert("Offroad_UnofficialHardware", (dongle_id == UNREGISTERED_DONGLE_ID) and not PC)
   return dongle_id
 
 
