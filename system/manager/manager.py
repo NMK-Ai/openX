@@ -39,7 +39,7 @@ def manager_init() -> None:
   convert_params(params_cache)
 
   default_params: list[tuple[str, str | bytes]] = [
-    ("CompletedTrainingVersion", "0"),
+    ("CompletedTrainingVersion", "0.2.0"),
     ("DisengageOnAccelerator", "0"),
     ("GsmMetered", "1"),
     ("HasAcceptedTerms", "0"),
