@@ -79,7 +79,7 @@ def manager_init() -> None:
     print("WARNING: failed to make /dev/shm")
 
   # set version params
-  serial = params.get("HardwareSerial")
+  serial = HARDWARE.get_serial()
   params.put("Version", build_metadata.openpilot.version)
   params.put("TermsVersion", terms_version)
   params.put("TrainingVersion", training_version)
