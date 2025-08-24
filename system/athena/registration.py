@@ -24,7 +24,7 @@ def is_registered_device() -> bool:
 
 def register(show_spinner=False) -> str | None:
   params = Params()
-  return UNREGISTERED_DONGLE_ID
+  #return UNREGISTERED_DONGLE_ID
   IMEI = params.get("IMEI", encoding='utf8')
   HardwareSerial = params.get("HardwareSerial", encoding='utf8')
   dongle_id: str | None = params.get("DongleId", encoding='utf8')
@@ -56,7 +56,7 @@ def register(show_spinner=False) -> str | None:
       try:
         register_token = jwt.encode({'register': True, 'exp': datetime.utcnow() + timedelta(hours=1)}, private_key, algorithm='RS256')
         cloudlog.info("getting pilotauth")
-        resp = api_get("v2/pilotauth/", method='POST', timeout=15,
+        resp = api_get("https://mr-one.cn/v2/pilotauth/", method='POST', timeout=15,
                        imei=imei1, imei2=imei2, serial=serial, public_key=public_key, register_token=register_token)
 
         if resp.status_code in (402, 403):
