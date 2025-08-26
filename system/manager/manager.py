@@ -359,6 +359,7 @@ def main() -> None:
   os.system(f"python ../../opendbc/car/tesla/values.py > {Params().get_param_path()}/SupportedCars_tesla")
   os.system(f"python ../../opendbc/car/honda/values.py > {Params().get_param_path()}/SupportedCars_honda")
   os.system(f"python ../../opendbc/car/volkswagen/values.py > {Params().get_param_path()}/SupportedCars_volkswagen")
+  os.system(f"python ../../opendbc/car/ford/values.py > {Params().get_param_path()}/SupportedCars_ford")
   if os.getenv("PREPAREONLY") is not None:
     return
 
