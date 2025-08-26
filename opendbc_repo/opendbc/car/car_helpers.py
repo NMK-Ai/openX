@@ -197,6 +197,10 @@ def get_car(can_recv: CanRecvCallable, can_send: CanSendCallable, set_obd_multip
         for doc in platform.config.car_docs:
           if name == doc.name:
             return platform
+      for platform in FORD:
+        for doc in platform.config.car_docs:
+          if name == doc.name:
+            return platform
       return None
     found_car = find_car(selected_car.decode("utf-8"))
     if found_car is not None:
