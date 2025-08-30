@@ -88,6 +88,37 @@
     </message>
 </context>
 <context>
+    <name>CarrotPanel</name>
+    <message>
+        <source>开始</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>巡航</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>速度</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>调节</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>显示</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>轨迹</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>选择您的车辆</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConfirmationDialog</name>
     <message>
         <source>Ok</source>
@@ -111,6 +142,33 @@
     <message>
         <source>Decline, uninstall %1</source>
         <translation>ปฏิเสธ และถอนการติดตั้ง %1</translation>
+    </message>
+</context>
+<context>
+    <name>DestinationWidget</name>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No destination set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No %1 location set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -172,11 +230,11 @@
     </message>
     <message>
         <source>Reset Calibration</source>
-        <translation>รีเซ็ตการคาลิเบรท</translation>
+        <translation type="vanished">รีเซ็ตการคาลิเบรท</translation>
     </message>
     <message>
         <source>RESET</source>
-        <translation>รีเซ็ต</translation>
+        <translation type="vanished">รีเซ็ต</translation>
     </message>
     <message>
         <source>Are you sure you want to reset calibration?</source>
@@ -268,7 +326,7 @@
     </message>
     <message>
         <source>Reset</source>
-        <translation>รีเซ็ต</translation>
+        <translation type="vanished">รีเซ็ต</translation>
     </message>
     <message>
         <source>Review</source>
@@ -285,6 +343,93 @@
     <message>
         <source>PAIR</source>
         <translation>จับคู่</translation>
+    </message>
+    <message>
+        <source>重启</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>重新校准</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>关机</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Git 拉取 &amp; 重启</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>执行 Git 拉取 &amp; 重启？</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>是</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>启动更新过程失败。</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>更新过程已启动。如果有更新，设备将重启。</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>恢复默认</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>恢复为默认设置？</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>移除 Mapbox Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>移除 Mapbox Key？</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>校准状态</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>显示</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ReCalibration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reboot &amp; Disengage to Calibration</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DrawCarrot</name>
+    <message>
+        <source>ECO</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SAFE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NORM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FAST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ERRM</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -371,6 +516,51 @@ Firehose Mode allows you to maximize your training data uploads to improve openp
     <message>
         <source>Installing...</source>
         <translation>กำลังติดตั้ง...</translation>
+    </message>
+</context>
+<context>
+    <name>MapETA</name>
+    <message>
+        <source>eta</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hr</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MapSettings</name>
+    <message>
+        <source>NAVIGATION</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage at connect.comma.ai</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MapWindow</name>
+    <message>
+        <source>Map Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for GPS(APN)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for route</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -525,33 +715,72 @@ Firehose Mode allows you to maximize your training data uploads to improve openp
     </message>
 </context>
 <context>
+    <name>PathEndDrawer</name>
+    <message>
+        <source>Signal Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signal Ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signal slowing</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PrimeAdWidget</name>
     <message>
         <source>Upgrade Now</source>
-        <translation>อัพเกรดเดี๋ยวนี้</translation>
+        <translation type="vanished">อัพเกรดเดี๋ยวนี้</translation>
     </message>
     <message>
         <source>Become a comma prime member at connect.comma.ai</source>
-        <translation>สมัครสมาชิก comma prime ได้ที่ connect.comma.ai</translation>
+        <translation type="vanished">สมัครสมาชิก comma prime ได้ที่ connect.comma.ai</translation>
     </message>
     <message>
         <source>PRIME FEATURES:</source>
-        <translation>คุณสมบัติของ PRIME:</translation>
+        <translation type="vanished">คุณสมบัติของ PRIME:</translation>
     </message>
     <message>
         <source>Remote access</source>
-        <translation>การเข้าถึงระยะไกล</translation>
+        <translation type="vanished">การเข้าถึงระยะไกล</translation>
     </message>
     <message>
         <source>24/7 LTE connectivity</source>
-        <translation>การเชื่อมต่อ LTE แบบ 24/7</translation>
+        <translation type="vanished">การเชื่อมต่อ LTE แบบ 24/7</translation>
     </message>
     <message>
         <source>1 year of drive storage</source>
-        <translation>จัดเก็บข้อมูลการขับขี่นาน 1 ปี</translation>
+        <translation type="vanished">จัดเก็บข้อมูลการขับขี่นาน 1 ปี</translation>
     </message>
     <message>
-        <source>Remote snapshots</source>
+        <source>欢迎选购Mr.one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>胡萝卜是唯一支持高速NOA的软件版本，感谢机械小鸽</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>高级功能:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>高德导航</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>高速NOA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>完全自定义</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>全中文体验</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -578,7 +807,7 @@ Firehose Mode allows you to maximize your training data uploads to improve openp
     </message>
     <message>
         <source>openpilot</source>
-        <translation>openpilot</translation>
+        <translation type="vanished">openpilot</translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s) ago</source>
@@ -601,6 +830,26 @@ Firehose Mode allows you to maximize your training data uploads to improve openp
     <message>
         <source>now</source>
         <translation>ตอนนี้</translation>
+    </message>
+    <message>
+        <source>km</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>carrotpilot</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -667,11 +916,15 @@ This may take up to a minute.</source>
         <translation>ซอฟต์แวร์</translation>
     </message>
     <message>
-        <source>Developer</source>
+        <source>Firehose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Firehose</source>
+        <source>萝卜</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>开发</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -793,7 +1046,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>OFFLINE</source>
-        <translation>ออฟไลน์</translation>
+        <translation type="vanished">ออฟไลน์</translation>
     </message>
     <message>
         <source>ONLINE</source>
@@ -801,23 +1054,23 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>ERROR</source>
-        <translation>เกิดข้อผิดพลาด</translation>
+        <translation type="vanished">เกิดข้อผิดพลาด</translation>
     </message>
     <message>
         <source>TEMP</source>
-        <translation>อุณหภูมิ</translation>
+        <translation type="vanished">อุณหภูมิ</translation>
     </message>
     <message>
         <source>HIGH</source>
-        <translation>สูง</translation>
+        <translation type="vanished">สูง</translation>
     </message>
     <message>
         <source>GOOD</source>
-        <translation>ดี</translation>
+        <translation type="vanished">ดี</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>พอใช้</translation>
+        <translation type="vanished">พอใช้</translation>
     </message>
     <message>
         <source>VEHICLE</source>
@@ -858,6 +1111,26 @@ This may take up to a minute.</source>
     <message>
         <source>5G</source>
         <translation>5G</translation>
+    </message>
+    <message>
+        <source>永远在线</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>温度</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>很热</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>凉爽</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>还行</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -939,39 +1212,75 @@ This may take up to a minute.</source>
     <name>SshControl</name>
     <message>
         <source>SSH Keys</source>
-        <translation>คีย์ SSH</translation>
+        <translation type="vanished">คีย์ SSH</translation>
     </message>
     <message>
         <source>Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
-        <translation>คำเตือน: สิ่งนี้ให้สิทธิ์ SSH เข้าถึงคีย์สาธารณะทั้งหมดใน GitHub ของคุณ อย่าป้อนชื่อผู้ใช้ GitHub อื่นนอกเหนือจากของคุณเอง พนักงาน comma จะไม่ขอให้คุณเพิ่มชื่อผู้ใช้ GitHub ของพวกเขา</translation>
+        <translation type="vanished">คำเตือน: สิ่งนี้ให้สิทธิ์ SSH เข้าถึงคีย์สาธารณะทั้งหมดใน GitHub ของคุณ อย่าป้อนชื่อผู้ใช้ GitHub อื่นนอกเหนือจากของคุณเอง พนักงาน comma จะไม่ขอให้คุณเพิ่มชื่อผู้ใช้ GitHub ของพวกเขา</translation>
     </message>
     <message>
         <source>ADD</source>
-        <translation>เพิ่ม</translation>
+        <translation type="vanished">เพิ่ม</translation>
     </message>
     <message>
         <source>Enter your GitHub username</source>
-        <translation>ป้อนชื่อผู้ใช้ GitHub ของคุณ</translation>
+        <translation type="vanished">ป้อนชื่อผู้ใช้ GitHub ของคุณ</translation>
     </message>
     <message>
         <source>LOADING</source>
-        <translation>กำลังโหลด</translation>
+        <translation type="vanished">กำลังโหลด</translation>
     </message>
     <message>
         <source>REMOVE</source>
-        <translation>ลบ</translation>
+        <translation type="vanished">ลบ</translation>
     </message>
     <message>
         <source>Username &apos;%1&apos; has no keys on GitHub</source>
-        <translation>ชื่อผู้ใช้ &apos;%1&apos; ไม่มีคีย์บน GitHub</translation>
+        <translation type="vanished">ชื่อผู้ใช้ &apos;%1&apos; ไม่มีคีย์บน GitHub</translation>
     </message>
     <message>
         <source>Request timed out</source>
-        <translation>ตรวจสอบไม่สำเร็จ เนื่องจากใช้เวลามากเกินไป</translation>
+        <translation type="vanished">ตรวจสอบไม่สำเร็จ เนื่องจากใช้เวลามากเกินไป</translation>
     </message>
     <message>
         <source>Username &apos;%1&apos; doesn&apos;t exist on GitHub</source>
-        <translation>ไม่พบชื่อผู้ใช้ &apos;%1&apos; บน GitHub</translation>
+        <translation type="vanished">ไม่พบชื่อผู้ใช้ &apos;%1&apos; บน GitHub</translation>
+    </message>
+    <message>
+        <source>SSH密钥</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>警告：这将授予对您GitHub设置中所有公钥的SSH访问权限。请勿输入除您自己之外的GitHub用户名。Comma员工绝不会要求您添加他们的GitHub用户名。</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>添加</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>输入您的GitHub用户名</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>加载中</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>移除</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>用户名 &apos;%1&apos; 在GitHub上没有密钥</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>请求超时</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>用户名 &apos;%1&apos; 在GitHub上不存在</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1108,6 +1417,18 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Enable driver monitoring even when openpilot is not engaged.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record and Upload Microphone Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record and store microphone audio while driving. The audio will be included in the dashcam video in comma connect.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MoreRelaxed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
