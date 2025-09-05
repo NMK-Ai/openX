@@ -11,7 +11,7 @@ class Beepd:
   def __init__(self):
     self.current_alert = AudibleAlert.none
     self.enable_gpio()
-    #self.startup_beep()
+    self.startup_beep()
 
   def enable_gpio(self):
     # 尝试 export，忽略已 export 的错误
@@ -56,10 +56,10 @@ class Beepd:
       self._beep(False)
       time.sleep(0.01)
 
-  #def startup_beep(self):
-    #self._beep(True)
-    #time.sleep(0.1)
-    #self._beep(False)
+  def startup_beep(self):
+    self._beep(True)
+    time.sleep(0.1)
+    self._beep(False)
 
   def dispatch_beep(self, func):
     threading.Thread(target=func, daemon=True).start()
@@ -86,10 +86,10 @@ class Beepd:
     pm = messaging.PubMaster(['controlsState'])
     while True:
       cs = messaging.new_message('controlsState')
-      #if frame == 20:
-        #cs.selfdriveState.alertSound = AudibleAlert.engage
-      #if frame == 40:
-        #cs.selfdriveState.alertSound = AudibleAlert.disengage
+      if frame == 20:
+        cs.selfdriveState.alertSound = AudibleAlert.engage
+      if frame == 40:
+        cs.selfdriveState.alertSound = AudibleAlert.disengage
       if frame == 60:
         cs.selfdriveState.alertSound = AudibleAlert.prompt
       if frame == 80:
