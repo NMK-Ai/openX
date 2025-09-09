@@ -1,4 +1,5 @@
 from opendbc.can import CANParser
+import numpy as np
 from opendbc.car import Bus, structs
 from opendbc.car.interfaces import CarStateBase
 from opendbc.car.common.conversions import Conversions as CV
