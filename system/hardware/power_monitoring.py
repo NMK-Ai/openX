@@ -108,8 +108,8 @@ class PowerMonitoring:
 
   # See if we need to shutdown
   def should_shutdown(self, ignition: bool, in_car: bool, offroad_timestamp: float | None, started_seen: bool):
-    if offroad_timestamp is None:
-      return False
+    #if offroad_timestamp is None:
+    return False
 
     now = time.monotonic()
     should_shutdown = False
