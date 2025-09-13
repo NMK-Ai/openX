@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os
+import sys
 import time
 import json
 import requests
@@ -6,6 +8,11 @@ from openpilot.common.params import Params
 from openpilot.common.spinner import Spinner
 from openpilot.system.hardware import HARDWARE
 from openpilot.common.swaglog import cloudlog
+
+# 解决中文输出问题
+os.environ["PYTHONIOENCODING"] = "utf-8"
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 UNREGISTERED_DONGLE_ID = "UnregisteredDevice"
 REGISTER_URL = "https://mr-one.cn/v2/register.php"  # 替换成你的注册服务器地址
@@ -15,10 +22,6 @@ def is_registered_device() -> bool:
     return dongle not in (None, UNREGISTERED_DONGLE_ID)
 
 def register(show_spinner=True) -> str:
-    """
-    注册设备，失败会一直卡住并显示错误信息。
-    成功后立即写入 Params，保证 openpilot 启动。
-    """
     params = Params()
     spinner = Spinner() if show_spinner else None
 
@@ -32,10 +35,9 @@ def register(show_spinner=True) -> str:
                 REGISTER_URL,
                 json={"serial": serial},
                 timeout=5,
-                verify=False  # 自签名证书可关闭验证
+                verify=False
             )
-
-            cloudlog.info(f"HTTP状态码: {resp.status_code}")
+            #cloudlog.info(f"HTTP状态码: {resp.status_code}")
 
             try:
                 dongleauth = resp.json()
@@ -63,9 +65,7 @@ def register(show_spinner=True) -> str:
             if spinner:
                 spinner.update(f"网络错误: {e}, 正在重试...")
 
-        # 每 5 秒重试一次
         time.sleep(5)
-
 
 if __name__ == "__main__":
     dongle_id = register(show_spinner=True)
