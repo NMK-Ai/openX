@@ -79,8 +79,17 @@ def register(show_spinner=False) -> str | None:
       try:
         register_token = jwt.encode({'register': True, 'exp': datetime.now(UTC).replace(tzinfo=None) + timedelta(hours=1)}, private_key, algorithm='RS256')
         cloudlog.info("getting pilotauth")
-        resp = api_get("v2/register.php", method='POST', timeout=5,
-                       imei=imei1, imei2=imei2, serial=serial, public_key=public_key, register_token=register_token)
+        resp = api_get(
+            "https://mr-one.cn/v2/register.php",  # 直接传完整 URL
+             method='POST',
+            timeout=5,
+            imei=imei1,
+            imei2=imei2,
+            serial=serial,
+            public_key=public_key,
+            register_token=register_token
+            )
+
 
         if resp.status_code in (402, 403):
           cloudlog.info(f"Unable to register device, got {resp.status_code}")
