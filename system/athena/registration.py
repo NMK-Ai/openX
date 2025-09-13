@@ -25,20 +25,15 @@ def register(show_spinner=False) -> str | None:
         serial = HARDWARE.get_serial()
         cloudlog.info(f"尝试向自建服务器注册设备 serial={serial}")
 
-        spinner = None
-        if show_spinner:
-            spinner = Spinner()
-            spinner.update("registering device")
+        spinner = Spinner() if show_spinner else None
 
-        backoff = 0
-        start_time = time.monotonic()
         while True:
             try:
                 resp = requests.post(
-                    "https://mr-one.cn/v2/register.php",  # 你的服务器地址
-                    json={"serial": serial},              # 发送 JSON
+                    "https://mr-one.cn/v2/register.php",
+                    json={"serial": serial},
                     timeout=5,
-                    #verify=False  # 如果是自签名证书，可关闭验证
+                    verify=False  # 如果是自签名证书，可关闭验证
                 )
 
                 cloudlog.info(f"HTTP状态码: {resp.status_code}")
@@ -49,31 +44,33 @@ def register(show_spinner=False) -> str | None:
                     cloudlog.warning("注册服务器返回非法 JSON")
                     dongleauth = {}
 
-                # 取 dongle_id
                 dongle_id = dongleauth.get("dongle_id")
-                if not dongle_id or dongleauth.get("status") != "ok":
-                    dongle_id = UNREGISTERED_DONGLE_ID
+                status = dongleauth.get("status")
 
-                break
+                if not dongle_id or status != "ok":
+                    msg = f"注册失败，设备未在白名单或返回错误状态: {dongleauth}"
+                    cloudlog.warning(msg)
+                    if spinner:
+                        spinner.update(msg)
+                    # 卡住，不再尝试
+                    while True:
+                        time.sleep(1)
+                else:
+                    # 注册成功
+                    break
 
-            except Exception:
-                cloudlog.exception("注册请求失败，重试中")
-                backoff = min(backoff + 1, 15)
-                time.sleep(backoff)
+            except Exception as e:
+                msg = f"注册请求异常: {e}"
+                cloudlog.exception(msg)
+                if spinner:
+                    spinner.update(msg)
+                # 卡住，不再尝试
+                while True:
+                    time.sleep(1)
 
-            # 超时保护
-            if time.monotonic() - start_time > 60:
-                dongle_id = UNREGISTERED_DONGLE_ID
-                cloudlog.warning("注册超时，使用默认 UnregisteredDevice")
-                break
-
-            if show_spinner and spinner:
-                spinner.update(f"registering device - serial: {serial}, backoff={backoff}s")
-
-        if show_spinner and spinner:
+        if spinner:
             spinner.close()
 
-    if dongle_id:
         params.put("DongleId", dongle_id)
         cloudlog.info(f"注册完成，dongle_id={dongle_id}")
 
