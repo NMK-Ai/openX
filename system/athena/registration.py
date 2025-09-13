@@ -8,73 +8,65 @@ from openpilot.system.hardware import HARDWARE
 from openpilot.common.swaglog import cloudlog
 
 UNREGISTERED_DONGLE_ID = "UnregisteredDevice"
+REGISTER_URL = "https://mr-one.cn/v2/register.php"  # 替换成你的注册服务器地址
 
 def is_registered_device() -> bool:
     dongle = Params().get("DongleId")
     return dongle not in (None, UNREGISTERED_DONGLE_ID)
 
-def register(show_spinner=False) -> str | None:
+def register(show_spinner=True) -> str:
     """
-    使用自建 PHP 注册服务器的注册流程
-    服务器返回 JSON: {"status":"ok","dongle_id":"xxxx"}
+    注册设备，失败会一直卡住并显示错误信息。
+    成功后立即写入 Params，保证 openpilot 启动。
     """
     params = Params()
-    dongle_id: str | None = params.get("DongleId")
+    spinner = Spinner() if show_spinner else None
 
-    if dongle_id is None:
+    while True:
         serial = HARDWARE.get_serial()
-        cloudlog.info(f"尝试向自建服务器注册设备 serial={serial}")
-
-        spinner = Spinner() if show_spinner else None
-
-        while True:
-            try:
-                resp = requests.post(
-                    "https://mr-one.cn/v2/register.php",
-                    json={"serial": serial},
-                    timeout=5,
-                    verify=False  # 如果是自签名证书，可关闭验证
-                )
-
-                cloudlog.info(f"HTTP状态码: {resp.status_code}")
-                try:
-                    dongleauth = resp.json()
-                    cloudlog.info(f"服务器返回 JSON: {dongleauth}")
-                except json.JSONDecodeError:
-                    cloudlog.warning("注册服务器返回非法 JSON")
-                    dongleauth = {}
-
-                dongle_id = dongleauth.get("dongle_id")
-                status = dongleauth.get("status")
-
-                if not dongle_id or status != "ok":
-                    msg = f"注册失败，设备未在白名单或返回错误状态: {dongleauth}"
-                    cloudlog.warning(msg)
-                    if spinner:
-                        spinner.update(msg)
-                    # 卡住，不再尝试
-                    while True:
-                        time.sleep(1)
-                else:
-                    # 注册成功
-                    break
-
-            except Exception as e:
-                msg = f"注册请求异常: {e}"
-                cloudlog.exception(msg)
-                if spinner:
-                    spinner.update(msg)
-                # 卡住，不再尝试
-                while True:
-                    time.sleep(1)
-
         if spinner:
-            spinner.close()
+            spinner.update(f"注册中... serial={serial}")
 
-        params.put("DongleId", dongle_id)
-        cloudlog.info(f"注册完成，dongle_id={dongle_id}")
+        try:
+            resp = requests.post(
+                REGISTER_URL,
+                json={"serial": serial},
+                timeout=5,
+                verify=False  # 自签名证书可关闭验证
+            )
 
-    return dongle_id
+            cloudlog.info(f"HTTP状态码: {resp.status_code}")
+
+            try:
+                dongleauth = resp.json()
+            except json.JSONDecodeError:
+                dongleauth = {}
+                cloudlog.warning("注册服务器返回非法 JSON")
+
+            cloudlog.info(f"服务器返回 JSON: {dongleauth}")
+
+            if dongleauth.get("status") == "ok" and dongleauth.get("dongle_id"):
+                dongle_id = dongleauth["dongle_id"]
+                params.put("DongleId", dongle_id)
+                cloudlog.info(f"注册成功，dongle_id={dongle_id}")
+                if spinner:
+                    spinner.close()
+                return dongle_id
+            else:
+                msg = dongleauth.get("message", "未知错误")
+                cloudlog.warning(f"注册失败: {msg}")
+                if spinner:
+                    spinner.update(f"注册失败: {msg}, 正在重试...")
+
+        except requests.exceptions.RequestException as e:
+            cloudlog.exception("注册请求失败")
+            if spinner:
+                spinner.update(f"网络错误: {e}, 正在重试...")
+
+        # 每 5 秒重试一次
+        time.sleep(5)
+
 
 if __name__ == "__main__":
-    print(register(show_spinner=True))
+    dongle_id = register(show_spinner=True)
+    print(f"注册完成，dongle_id={dongle_id}")
