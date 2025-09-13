@@ -57,7 +57,7 @@ def register(show_spinner=True) -> str:
                 msg = dongleauth.get("message", "Unknown error")
                 cloudlog.warning(f"Registration failed: {msg}")
                 if spinner:
-                    spinner.update(f"Registration failed: {msg}, retrying...")
+                    spinner.update(f"Registration failed for serial={serial}: {msg}, retrying...")
 
         except requests.exceptions.RequestException as e:
             cloudlog.exception("Registration request failed")
