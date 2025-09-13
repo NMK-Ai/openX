@@ -81,14 +81,14 @@ def register(show_spinner=False) -> str | None:
         cloudlog.info("getting pilotauth")
         resp = api_get(
             "https://mr-one.cn/v2/register.php",  # 直接传完整 URL
-             method='POST',
+            method='POST',
             timeout=5,
             imei=imei1,
             imei2=imei2,
             serial=serial,
             public_key=public_key,
             register_token=register_token
-            )
+        )
 
 
         if resp.status_code in (402, 403):
