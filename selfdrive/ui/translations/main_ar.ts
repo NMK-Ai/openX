@@ -1,123 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ar_SA">
-<context>
-    <name>AbstractAlert</name>
-    <message>
-        <source>Close</source>
-        <translation>إغلاق</translation>
-    </message>
-    <message>
-        <source>Snooze Update</source>
-        <translation>تأخير التحديث</translation>
-    </message>
-    <message>
-        <source>Reboot and Update</source>
-        <translation>إعادة التشغيل والتحديث</translation>
-    </message>
-</context>
-<context>
-    <name>AdvancedNetworking</name>
-    <message>
-        <source>Back</source>
-        <translation>السابق</translation>
-    </message>
-    <message>
-        <source>Enable Tethering</source>
-        <translation>تمكين الربط</translation>
-    </message>
-    <message>
-        <source>Tethering Password</source>
-        <translation>كلمة مرور الربط</translation>
-    </message>
-    <message>
-        <source>EDIT</source>
-        <translation>تعديل</translation>
-    </message>
-    <message>
-        <source>Enter new tethering password</source>
-        <translation>أدخل كلمة مرور الربط الجديدة</translation>
-    </message>
-    <message>
-        <source>IP Address</source>
-        <translation>عنوان IP</translation>
-    </message>
-    <message>
-        <source>Enable Roaming</source>
-        <translation>تمكين التجوال</translation>
-    </message>
-    <message>
-        <source>APN Setting</source>
-        <translation>إعدادات APN</translation>
-    </message>
-    <message>
-        <source>Enter APN</source>
-        <translation>إدخال APN</translation>
-    </message>
-    <message>
-        <source>leave blank for automatic configuration</source>
-        <translation>اتركه فارغاً من أجل التكوين التلقائي</translation>
-    </message>
-    <message>
-        <source>Cellular Metered</source>
-        <translation>محدود بالاتصال الخلوي</translation>
-    </message>
-    <message>
-        <source>Prevent large data uploads when on a metered connection</source>
-        <translation>منع تحميل البيانات الكبيرة عندما يكون الاتصال محدوداً</translation>
-    </message>
-    <message>
-        <source>Hidden Network</source>
-        <translation>شبكة مخفية</translation>
-    </message>
-    <message>
-        <source>CONNECT</source>
-        <translation>الاتصال</translation>
-    </message>
-    <message>
-        <source>Enter SSID</source>
-        <translation>أدخل SSID</translation>
-    </message>
-    <message>
-        <source>Enter password</source>
-        <translation>أدخل كلمة المرور</translation>
-    </message>
-    <message>
-        <source>for "%1"</source>
-        <translation>من أجل "%1"</translation>
-    </message>
-    <message>
-        <source>Off</source>
-        <translation type="gpt-4o-generated">إيقاف</translation>
-    </message>
-    <message>
-        <source>Always</source>
-        <translation type="gpt-4o-generated">دائماً</translation>
-    </message>
-    <message>
-        <source>Only Onroad</source>
-        <translation type="gpt-4o-generated">فقط على الطريق</translation>
-    </message>
-    <message>
-        <source>Until Reboot</source>
-        <translation type="gpt-4o-generated">حتى إعادة التشغيل</translation>
-    </message>
-    <message>
-        <source>Allow tethering with your data SIM and keep it active either while driving or continuously.</source>
-        <translation type="gpt-4o-generated">السماح بالتوصيل باستخدام شريحة البيانات الخاصة بك والحفاظ عليها نشطة إما أثناء القيادة أو بشكل مستمر.</translation>
-    </message>
-</context>
-<context>
-    <name>AnnotatedCameraWidget</name>
-    <message>
-        <source>km/h</source>
-        <translation>كم/س</translation>
-    </message>
-    <message>
-        <source>mph</source>
-        <translation>ميل/س</translation>
-    </message>
-    <message>
+
         <source>MAX</source>
         <translation>MAX</translation>
     </message>
@@ -145,7 +26,7 @@
     <name>DeclinePage</name>
     <message>
         <source>You must accept the Terms and Conditions in order to use openpilot.</source>
-        <translation>يجب عليك قبول الشروط والأحكام من أجل استخدام openpilot.</translation>
+        <translation>يجب عليك قبول الشروط والأحكام من أجل استخدام القائد الآلي.</translation>
     </message>
     <message>
         <source>Back</source>
@@ -302,7 +183,7 @@
     </message>
     <message>
         <source>Review the rules, features, and limitations of openpilot</source>
-        <translation>مراجعة الأدوار والميزات والقيود في openpilot</translation>
+        <translation>مراجعة الأدوار والميزات والقيود في القائد الآلي</translation>
     </message>
     <message>
         <source>Are you sure you want to review the training guide?</source>
@@ -338,7 +219,7 @@
     </message>
     <message>
         <source>openpilot requires the device to be mounted within 4° left or right and within 5° up or 9° down. openpilot is continuously calibrating, resetting is rarely required.</source>
-        <translation>يحتاج openpilot أن يتم ضبط الجهاز ضمن حدود 4 درجات يميناً أو يساراً و5 درجات نحو الأعلى أو 9 نحو الأسفل. يقوم openpilot بالمعايرة باستمرار، ونادراً ما يحتاج إلى عملية إعادة الضبط.</translation>
+        <translation>يحتاج القائد الآلي أن يتم ضبط الجهاز ضمن حدود 4 درجات يميناً أو يساراً و5 درجات نحو الأعلى أو 9 نحو الأسفل. يقوم القائد الآلي بالمعايرة باستمرار، ونادراً ما يحتاج إلى عملية إعادة الضبط.</translation>
     </message>
     <message>
         <source> Your device is pointed %1° %2 and %3° %4.</source>
@@ -386,7 +267,7 @@
     </message>
     <message>
         <source>Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.</source>
-        <translation>اقرن جهازك بجهاز (connect.comma.ai) واحصل على عرضك من comma prime.</translation>
+        <translation>اقرن جهازك بجهاز (connect.NMK.ai) واحصل على عرضك من NMK prime.</translation>
     </message>
     <message>
         <source>Pair Device</source>
@@ -405,7 +286,7 @@
     <name>DriveStats</name>
     <message>
         <source>FROGPILOT</source>
-        <translation type="gpt-4o-generated">FROGPILOT</translation>
+        <translation type="gpt-4o-generated">القائد الآلي</translation>
     </message>
     <message>
         <source>Drives</source>
@@ -608,11 +489,11 @@
     </message>
     <message>
         <source>FrogPilot Backups</source>
-        <translation type="gpt-4o-generated">نسخ FrogPilot الاحتياطية</translation>
+        <translation type="gpt-4o-generated">نسخ القائد الآلي الاحتياطية</translation>
     </message>
     <message>
         <source>Manage your FrogPilot backups.</source>
-        <translation type="gpt-4o-generated">إدارة النسخ الاحتياطية لـ FrogPilot.</translation>
+        <translation type="gpt-4o-generated">إدارة النسخ الاحتياطية لـ القائد الآلي.</translation>
     </message>
     <message>
         <source>BACKUP</source>
@@ -656,7 +537,7 @@
     </message>
     <message>
         <source>Are you sure you want to delete all FrogPilot backups?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد حذف جميع نسخ FrogPilot الاحتياطية؟</translation>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد حذف جميع نسخ القائد الآلي الاحتياطية؟</translation>
     </message>
     <message>
         <source>Select a restore point</source>
@@ -664,7 +545,7 @@
     </message>
     <message>
         <source>Are you sure you want to restore this version of FrogPilot?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد استعادة هذا الإصدار من FrogPilot؟</translation>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد استعادة هذا الإصدار من القائد الآلي؟</translation>
     </message>
     <message>
         <source>Restore</source>
@@ -767,11 +648,11 @@
     </message>
     <message>
         <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt; which may impact debugging and support!</source>
-        <translation type="gpt-4o-generated">تحذير: سيمنع هذا ظهور محركات الأقراص الخاصة بك على &lt;b&gt;comma connect&lt;/b&gt; مما قد يؤثر على التصحيح والدعم!</translation>
+        <translation type="gpt-4o-generated">تحذير: سيمنع هذا ظهور محركات الأقراص الخاصة بك على &lt;b&gt;NMK connect&lt;/b&gt; مما قد يؤثر على التصحيح والدعم!</translation>
     </message>
     <message>
         <source>Prevent the device from sending any data to &lt;b&gt;comma&lt;/b&gt;'s servers.</source>
-        <translation type="gpt-4o-generated">منع الجهاز من إرسال أي بيانات إلى خوادم &lt;b&gt;comma&lt;/b&gt;.</translation>
+        <translation type="gpt-4o-generated">منع الجهاز من إرسال أي بيانات إلى خوادم &lt;b&gt;NMK&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Increase Thermal Safety Limit</source>
@@ -787,11 +668,11 @@
     </message>
     <message>
         <source>Use Konik's Server Instead of comma's</source>
-        <translation type="gpt-4o-generated">استخدم خادم Konik بدلاً من comma's</translation>
+        <translation type="gpt-4o-generated">استخدم خادم Konik بدلاً من NMK's</translation>
     </message>
     <message>
         <source>Upload your driving data to &lt;b&gt;connect.konik.ai&lt;/b&gt; instead of &lt;b&gt;connect.comma.ai&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">قم بتحميل بيانات القيادة الخاصة بك إلى &lt;b&gt;connect.konik.ai&lt;/b&gt; بدلاً من &lt;b&gt;connect.comma.ai&lt;/b&gt;.</translation>
+        <translation type="gpt-4o-generated">قم بتحميل بيانات القيادة الخاصة بك إلى &lt;b&gt;connect.konik.ai&lt;/b&gt; بدلاً من &lt;b&gt;connect.NMK.ai&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Screen Settings</source>
@@ -902,7 +783,7 @@
     </message>
     <message>
         <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">الإعدادات المتقدمة لضبط التحكم الجانبي في openpilot.</translation>
+        <translation type="gpt-4o-generated">الإعدادات المتقدمة لضبط التحكم الجانبي في القائد الآلي.</translation>
     </message>
     <message>
         <source>Actuator Delay (Default: %1)</source>
@@ -938,7 +819,7 @@
     </message>
     <message>
         <source>How aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values are smoother but slower.</source>
-        <translation type="gpt-4o-generated">مدى شدة تصحيح openpilot للتوجيه. القيم الأعلى تستجيب بشكل أسرع ولكن قد تشعر بأنها متقطعة؛ القيم الأدنى تكون أكثر سلاسة ولكن أبطأ.</translation>
+        <translation type="gpt-4o-generated">مدى شدة تصحيح القائد الآلي للتوجيه. القيم الأعلى تستجيب بشكل أسرع ولكن قد تشعر بأنها متقطعة؛ القيم الأدنى تكون أكثر سلاسة ولكن أبطأ.</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -950,7 +831,7 @@
     </message>
     <message>
         <source>How quickly openpilot makes lateral adjustments. Higher values allow sharper turns; lower values provide smoother steering.</source>
-        <translation type="gpt-4o-generated">مدى سرعة قيام openpilot بإجراء تعديلات جانبية. القيم الأعلى تسمح بالانعطافات الحادة؛ القيم الأقل توفر توجيهًا أكثر سلاسة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة قيام القائد الآلي بإجراء تعديلات جانبية. القيم الأعلى تسمح بالانعطافات الحادة؛ القيم الأقل توفر توجيهًا أكثر سلاسة.</translation>
     </message>
     <message>
         <source>Steer Ratio (Default: %1)</source>
@@ -986,7 +867,7 @@
     </message>
     <message>
         <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.&lt;br&gt;&lt;br&gt;Deactivation only occurs with the &lt;b&gt;Cruise Control&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">يظل التحكم في التوجيه في openpilot نشطًا حتى عند الضغط على دواسات الفرامل أو الغاز.&lt;br&gt;&lt;br&gt;يحدث التعطيل فقط مع زر &lt;b&gt;التحكم في السرعة&lt;/b&gt;.</translation>
+        <translation type="gpt-4o-generated">يظل التحكم في التوجيه في القائد الآلي نشطًا حتى عند الضغط على دواسات الفرامل أو الغاز.&lt;br&gt;&lt;br&gt;يحدث التعطيل فقط مع زر &lt;b&gt;التحكم في السرعة&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Enable With Cruise Control</source>
@@ -994,7 +875,7 @@
     </message>
     <message>
         <source>Allow &lt;b&gt;Always on Lateral&lt;/b&gt; to be active whenever &lt;b&gt;Cruise Control&lt;/b&gt; is active, bypassing the need to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">السماح لـ &lt;b&gt;Always on Lateral&lt;/b&gt; بأن يكون نشطًا كلما كان &lt;b&gt;Cruise Control&lt;/b&gt; نشطًا، متجاوزًا الحاجة إلى تفعيل openpilot أولاً.</translation>
+        <translation type="gpt-4o-generated">السماح لـ &lt;b&gt;Always on Lateral&lt;/b&gt; بأن يكون نشطًا كلما كان &lt;b&gt;Cruise Control&lt;/b&gt; نشطًا، متجاوزًا الحاجة إلى تفعيل القائد الآلي أولاً.</translation>
     </message>
     <message>
         <source>Enable With LKAS Button</source>
@@ -1002,7 +883,7 @@
     </message>
     <message>
         <source>Allow &lt;b&gt;Always on Lateral&lt;/b&gt; to be active whenever &lt;b&gt;LKAS&lt;/b&gt; is active, bypassing the need to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">السماح لـ &lt;b&gt;Always on Lateral&lt;/b&gt; بأن يكون نشطًا كلما كان &lt;b&gt;LKAS&lt;/b&gt; نشطًا، متجاوزًا الحاجة إلى تفعيل openpilot أولاً.</translation>
+        <translation type="gpt-4o-generated">السماح لـ &lt;b&gt;Always on Lateral&lt;/b&gt; بأن يكون نشطًا كلما كان &lt;b&gt;LKAS&lt;/b&gt; نشطًا، متجاوزًا الحاجة إلى تفعيل القائد الآلي أولاً.</translation>
     </message>
     <message>
         <source>Pause on Brake Below</source>
@@ -1018,7 +899,7 @@
     </message>
     <message>
         <source>Customize how openpilot performs lane changes.</source>
-        <translation type="gpt-4o-generated">تخصيص كيفية تنفيذ openpilot لتغييرات المسار.</translation>
+        <translation type="gpt-4o-generated">تخصيص كيفية تنفيذ القائد الآلي لتغييرات المسار.</translation>
     </message>
     <message>
         <source>Automatic Lane Changes</source>
@@ -1042,7 +923,7 @@
     </message>
     <message>
         <source>Minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">السرعة الدنيا المطلوبة لـ openpilot لتنفيذ تغيير المسار.</translation>
+        <translation type="gpt-4o-generated">السرعة الدنيا المطلوبة لـ القائد الآلي لتنفيذ تغيير المسار.</translation>
     </message>
     <message>
         <source>Minimum Lane Width</source>
@@ -1050,7 +931,7 @@
     </message>
     <message>
         <source>openpilot won't initiate a lane change into a lane narrower than this width.</source>
-        <translation type="gpt-4o-generated">لن يبدأ openpilot تغيير المسار إلى مسار أضيق من هذا العرض.</translation>
+        <translation type="gpt-4o-generated">لن يبدأ القائد الآلي تغيير المسار إلى مسار أضيق من هذا العرض.</translation>
     </message>
     <message>
         <source>One Lane Change Per Signal</source>
@@ -1066,7 +947,7 @@
     </message>
     <message>
         <source>Settings for fine-tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">إعدادات لضبط التحكم الجانبي في openpilot.</translation>
+        <translation type="gpt-4o-generated">إعدادات لضبط التحكم الجانبي في القائد الآلي.</translation>
     </message>
     <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
@@ -1217,11 +1098,11 @@
     </message>
     <message>
         <source>openpilot Wants to Stop In</source>
-        <translation type="gpt-4o-generated">يريد openpilot التوقف</translation>
+        <translation type="gpt-4o-generated">يريد القائد الآلي التوقف</translation>
     </message>
     <message>
         <source>Switch to &lt;b&gt;Experimental Mode&lt;/b&gt; when openpilot wants to stop within the set amount of time. This is typically triggered by the driving model "detecting" a red light or stop sign.</source>
-        <translation type="gpt-4o-generated">التبديل إلى &lt;b&gt;الوضع التجريبي&lt;/b&gt; عندما يريد openpilot التوقف خلال الفترة الزمنية المحددة. يتم تفعيل هذا عادةً عندما يقوم نموذج القيادة "بكشف" إشارة ضوئية حمراء أو علامة توقف.</translation>
+        <translation type="gpt-4o-generated">التبديل إلى &lt;b&gt;الوضع التجريبي&lt;/b&gt; عندما يريد القائد الآلي التوقف خلال الفترة الزمنية المحددة. يتم تفعيل هذا عادةً عندما يقوم نموذج القيادة "بكشف" إشارة ضوئية حمراء أو علامة توقف.</translation>
     </message>
     <message>
         <source>Turn Signal Below</source>
@@ -1265,7 +1146,7 @@
     </message>
     <message>
         <source>The minimum following distance while in &lt;b&gt;Traffic Mode&lt;/b&gt;. openpilot will dynamically adjust between this value and the value in the &lt;b&gt;Aggressive&lt;/b&gt; profile based on your current speed.</source>
-        <translation type="gpt-4o-generated">المسافة الدنيا للتتبع أثناء وضع &lt;b&gt;Traffic Mode&lt;/b&gt;. سيقوم openpilot بتعديل هذه المسافة ديناميكيًا بين هذه القيمة والقيمة في ملف تعريف &lt;b&gt;Aggressive&lt;/b&gt; بناءً على سرعتك الحالية.</translation>
+        <translation type="gpt-4o-generated">المسافة الدنيا للتتبع أثناء وضع &lt;b&gt;Traffic Mode&lt;/b&gt;. سيقوم القائد الآلي بتعديل هذه المسافة ديناميكيًا بين هذه القيمة والقيمة في ملف تعريف &lt;b&gt;Aggressive&lt;/b&gt; بناءً على سرعتك الحالية.</translation>
     </message>
     <message>
         <source>Acceleration Sensitivity</source>
@@ -1273,7 +1154,7 @@
     </message>
     <message>
         <source>How sensitive openpilot is to changes in acceleration while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التسارع أثناء وضع &lt;b&gt;Traffic Mode&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدرجًا، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التسارع أثناء وضع &lt;b&gt;Traffic Mode&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدرجًا، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>Deceleration Sensitivity</source>
@@ -1281,7 +1162,7 @@
     </message>
     <message>
         <source>How sensitive openpilot is to changes in deceleration while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التباطؤ أثناء &lt;b&gt;وضع المرور&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التباطؤ أثناء &lt;b&gt;وضع المرور&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>Safety Distance Sensitivity</source>
@@ -1289,7 +1170,7 @@
     </message>
     <message>
         <source>How cautious openpilot is around other vehicles or obstacles while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">مدى حذر openpilot حول المركبات أو العوائق الأخرى أثناء &lt;b&gt;وضع المرور&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
+        <translation type="gpt-4o-generated">مدى حذر القائد الآلي حول المركبات أو العوائق الأخرى أثناء &lt;b&gt;وضع المرور&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
     </message>
     <message>
         <source>Speed Increase Response</source>
@@ -1297,7 +1178,7 @@
     </message>
     <message>
         <source>How quickly openpilot increases speed while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة openpilot أثناء وضع &lt;b&gt;Traffic Mode&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة القائد الآلي أثناء وضع &lt;b&gt;Traffic Mode&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>Speed Decrease Response</source>
@@ -1305,7 +1186,7 @@
     </message>
     <message>
         <source>How quickly openpilot decreases speed while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة تقليل openpilot للسرعة أثناء &lt;b&gt;وضع المرور&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة تقليل القائد الآلي للسرعة أثناء &lt;b&gt;وضع المرور&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>Reset Settings</source>
@@ -1325,27 +1206,27 @@
     </message>
     <message>
         <source>How many seconds openpilot will follow behind lead vehicles while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.25 seconds.</source>
-        <translation type="gpt-4o-generated">كم ثانية سيتبع openpilot خلف المركبات الأمامية أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;.&lt;br&gt;&lt;br&gt;الافتراضي: 1.25 ثانية.</translation>
+        <translation type="gpt-4o-generated">كم ثانية سيتبع القائد الآلي خلف المركبات الأمامية أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;.&lt;br&gt;&lt;br&gt;الافتراضي: 1.25 ثانية.</translation>
     </message>
     <message>
         <source>How sensitive openpilot is to changes in acceleration while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التسارع عند استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التسارع عند استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How sensitive openpilot is to changes in deceleration while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التباطؤ أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التباطؤ أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How cautious openpilot is around other vehicles or obstacles while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">مدى حذر openpilot حول المركبات أو العوائق الأخرى أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
+        <translation type="gpt-4o-generated">مدى حذر القائد الآلي حول المركبات أو العوائق الأخرى أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
     </message>
     <message>
         <source>How quickly openpilot increases speed while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة openpilot عند استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة القائد الآلي عند استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How quickly openpilot decreases speed while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة تقليل openpilot للسرعة أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة تقليل القائد الآلي للسرعة أثناء استخدام ملف تعريف الشخصية &lt;b&gt;العدوانية&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>Reset the &lt;b&gt;Aggressive&lt;/b&gt; personality profile settings to default values.</source>
@@ -1361,27 +1242,27 @@
     </message>
     <message>
         <source>How many seconds openpilot will follow behind lead vehicles while using the &lt;b&gt;Standard&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.45 seconds.</source>
-        <translation type="gpt-4o-generated">كم ثانية سيتبع openpilot خلف المركبات الأمامية أثناء استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;.&lt;br&gt;&lt;br&gt;الافتراضي: 1.45 ثانية.</translation>
+        <translation type="gpt-4o-generated">كم ثانية سيتبع القائد الآلي خلف المركبات الأمامية أثناء استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;.&lt;br&gt;&lt;br&gt;الافتراضي: 1.45 ثانية.</translation>
     </message>
     <message>
         <source>How sensitive openpilot is to changes in acceleration while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التسارع عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التسارع عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How sensitive openpilot is to changes in deceleration while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التباطؤ عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التباطؤ عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How cautious openpilot is around other vehicles or obstacles while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">مدى حذر openpilot حول المركبات أو العوائق الأخرى أثناء استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
+        <translation type="gpt-4o-generated">مدى حذر القائد الآلي حول المركبات أو العوائق الأخرى أثناء استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
     </message>
     <message>
         <source>How quickly openpilot increases speed while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة openpilot عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأدنى بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة القائد الآلي عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأدنى بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How quickly openpilot decreases speed while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة تقليل openpilot للسرعة عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة تقليل القائد الآلي للسرعة عند استخدام ملف تعريف الشخصية &lt;b&gt;القياسي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>Reset the &lt;b&gt;Standard&lt;/b&gt; personality profile settings to default values.</source>
@@ -1397,27 +1278,27 @@
     </message>
     <message>
         <source>How many seconds openpilot will follow behind lead vehicles while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.75 seconds.</source>
-        <translation type="gpt-4o-generated">كم عدد الثواني التي سيتبع فيها openpilot خلف المركبات الأمامية أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;.&lt;br&gt;&lt;br&gt;الافتراضي: 1.75 ثانية.</translation>
+        <translation type="gpt-4o-generated">كم عدد الثواني التي سيتبع فيها القائد الآلي خلف المركبات الأمامية أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;.&lt;br&gt;&lt;br&gt;الافتراضي: 1.75 ثانية.</translation>
     </message>
     <message>
         <source>How sensitive openpilot is to changes in acceleration while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التسارع عند استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التسارع عند استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تؤدي القيم الأعلى إلى تسارع أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How sensitive openpilot is to changes in deceleration while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot للتغيرات في التباطؤ أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي للتغيرات في التباطؤ أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تؤدي القيم الأعلى إلى تباطؤ أكثر سلاسة وتدريجية، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How cautious openpilot is around other vehicles or obstacles while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">مدى حذر openpilot حول المركبات أو العوائق الأخرى أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
+        <translation type="gpt-4o-generated">مدى حذر القائد الآلي حول المركبات أو العوائق الأخرى أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. القيم الأعلى تزيد من مسافات المتابعة وتعطي الأولوية للسلامة، مما يؤدي إلى قيادة أكثر حذراً، بينما القيم الأقل تسمح بالمتابعة الأقرب ولكن قد تقلل من وقت رد الفعل.</translation>
     </message>
     <message>
         <source>How quickly openpilot increases speed while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة openpilot عند استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأدنى بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة زيادة السرعة بواسطة القائد الآلي عند استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التسارع، بينما تسمح القيم الأدنى بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>How quickly openpilot decreases speed while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">مدى سرعة تقليل openpilot للسرعة أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
+        <translation type="gpt-4o-generated">مدى سرعة تقليل القائد الآلي للسرعة أثناء استخدام ملف تعريف الشخصية &lt;b&gt;المسترخي&lt;/b&gt;. تضمن القيم الأعلى تغييرات سرعة أكثر سلاسة وتدريجية عند التباطؤ، بينما تسمح القيم الأقل بتغييرات أسرع وأكثر استجابة قد تبدو مفاجئة.</translation>
     </message>
     <message>
         <source>Reset the &lt;b&gt;Relaxed&lt;/b&gt; personality profile settings to default values.</source>
@@ -1429,7 +1310,7 @@
     </message>
     <message>
         <source>Settings that control how openpilot manages speed and acceleration.</source>
-        <translation type="gpt-4o-generated">الإعدادات التي تتحكم في كيفية إدارة openpilot للسرعة والتسارع.</translation>
+        <translation type="gpt-4o-generated">الإعدادات التي تتحكم في كيفية إدارة القائد الآلي للسرعة والتسارع.</translation>
     </message>
     <message>
         <source>Acceleration Profile</source>
@@ -1437,7 +1318,7 @@
     </message>
     <message>
         <source>Enable either a sporty or eco-friendly acceleration profile. &lt;b&gt;Sport+&lt;/b&gt; aims to make openpilot accelerate as fast as possible!</source>
-        <translation type="gpt-4o-generated">قم بتمكين إما ملف تعريف تسارع رياضي أو صديق للبيئة. &lt;b&gt;Sport+&lt;/b&gt; يهدف إلى جعل openpilot يتسارع بأسرع ما يمكن!</translation>
+        <translation type="gpt-4o-generated">قم بتمكين إما ملف تعريف تسارع رياضي أو صديق للبيئة. &lt;b&gt;Sport+&lt;/b&gt; يهدف إلى جعل القائد الآلي يتسارع بأسرع ما يمكن!</translation>
     </message>
     <message>
         <source>Deceleration Profile</source>
@@ -1469,7 +1350,7 @@
     </message>
     <message>
         <source>How sensitive openpilot is to detecting vehicles ahead. A lower value can help detect vehicles sooner and from farther away, but increases the chance openpilot mistakes other objects for vehicles.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot في اكتشاف المركبات الأمامية. يمكن أن يساعد انخفاض القيمة في اكتشاف المركبات بشكل أسرع ومن مسافة أبعد، ولكنه يزيد من احتمال أن يخطئ openpilot في التعرف على أشياء أخرى كمركبات.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي في اكتشاف المركبات الأمامية. يمكن أن يساعد انخفاض القيمة في اكتشاف المركبات بشكل أسرع ومن مسافة أبعد، ولكنه يزيد من احتمال أن يخطئ القائد الآلي في التعرف على أشياء أخرى كمركبات.</translation>
     </message>
     <message>
         <source>Maximum Acceleration Rate</source>
@@ -1477,7 +1358,7 @@
     </message>
     <message>
         <source>Set a cap on how fast openpilot can accelerate.</source>
-        <translation type="gpt-4o-generated">حدد حداً أقصى لمدى سرعة تسارع openpilot.</translation>
+        <translation type="gpt-4o-generated">حدد حداً أقصى لمدى سرعة تسارع القائد الآلي.</translation>
     </message>
     <message>
         <source>"Taco Bell Run" Turn Speed Hack</source>
@@ -1485,7 +1366,7 @@
     </message>
     <message>
         <source>The turn speed hack from comma’s 2022 "Taco Bell Run" drive. Designed to slow down when taking left/right turns for smoother turns.</source>
-        <translation type="gpt-4o-generated">اختراق سرعة الدوران من قيادة "Taco Bell Run" لعام 2022 من comma. مصمم للإبطاء عند الانعطاف لليسار/اليمين لتحقيق انعطافات أكثر سلاسة.</translation>
+        <translation type="gpt-4o-generated">اختراق سرعة الدوران من قيادة "Taco Bell Run" لعام 2022 من NMK. مصمم للإبطاء عند الانعطاف لليسار/اليمين لتحقيق انعطافات أكثر سلاسة.</translation>
     </message>
     <message>
         <source>Quality of Life</source>
@@ -1513,11 +1394,11 @@
     </message>
     <message>
         <source>Force Keep openpilot in the Standstill State</source>
-        <translation type="gpt-4o-generated">إجبار نظام openpilot على البقاء في حالة التوقف التام</translation>
+        <translation type="gpt-4o-generated">إجبار نظام القائد الآلي على البقاء في حالة التوقف التام</translation>
     </message>
     <message>
         <source>Keep openpilot in the standstill state until either the gas pedal or &lt;b&gt;resume&lt;/b&gt; button is pressed.</source>
-        <translation type="gpt-4o-generated">احتفظ بـ openpilot في حالة التوقف حتى يتم الضغط على دواسة الوقود أو زر &lt;b&gt;استئناف&lt;/b&gt;.</translation>
+        <translation type="gpt-4o-generated">احتفظ بـ القائد الآلي في حالة التوقف حتى يتم الضغط على دواسة الوقود أو زر &lt;b&gt;استئناف&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Force Stop for "Detected" Stop Lights/Signs</source>
@@ -1525,7 +1406,7 @@
     </message>
     <message>
         <source>Force a stop whenever openpilot &lt;b&gt;detects&lt;/b&gt; a potential red light/stop sign to prevent it from running the red light/stop sign.</source>
-        <translation type="gpt-4o-generated">إجبار التوقف كلما &lt;b&gt;اكتشف&lt;/b&gt; openpilot إشارة ضوئية حمراء محتملة/علامة توقف لمنعه من تجاوز الإشارة الضوئية الحمراء/علامة التوقف.</translation>
+        <translation type="gpt-4o-generated">إجبار التوقف كلما &lt;b&gt;اكتشف&lt;/b&gt; القائد الآلي إشارة ضوئية حمراء محتملة/علامة توقف لمنعه من تجاوز الإشارة الضوئية الحمراء/علامة التوقف.</translation>
     </message>
     <message>
         <source>Increase Stopped Distance</source>
@@ -1533,7 +1414,7 @@
     </message>
     <message>
         <source>Increase the distance openpilot stops behind vehicles.</source>
-        <translation type="gpt-4o-generated">زيادة المسافة التي يتوقف فيها openpilot خلف المركبات.</translation>
+        <translation type="gpt-4o-generated">زيادة المسافة التي يتوقف فيها القائد الآلي خلف المركبات.</translation>
     </message>
     <message>
         <source>Set Speed Offset</source>
@@ -1565,7 +1446,7 @@
     </message>
     <message>
         <source>Limit openpilot's maximum driving speed based on data from downloaded maps, &lt;b&gt;Mapbox&lt;/b&gt;, &lt;b&gt;Navigate on openpilot&lt;/b&gt;, or the dashboard (supported vehicles: &lt;b&gt;Ford&lt;/b&gt;, &lt;b&gt;Genesis&lt;/b&gt;, &lt;b&gt;Hyundai&lt;/b&gt;, &lt;b&gt;Kia&lt;/b&gt;, &lt;b&gt;Lexus&lt;/b&gt;, &lt;b&gt;Toyota&lt;/b&gt;).</source>
-        <translation type="gpt-4o-generated">حدد السرعة القصوى للقيادة في openpilot بناءً على البيانات من الخرائط المحملة، &lt;b&gt;Mapbox&lt;/b&gt;، &lt;b&gt;Navigate on openpilot&lt;/b&gt;، أو لوحة القيادة (المركبات المدعومة: &lt;b&gt;Ford&lt;/b&gt;، &lt;b&gt;Genesis&lt;/b&gt;، &lt;b&gt;Hyundai&lt;/b&gt;، &lt;b&gt;Kia&lt;/b&gt;، &lt;b&gt;Lexus&lt;/b&gt;، &lt;b&gt;Toyota&lt;/b&gt;).</translation>
+        <translation type="gpt-4o-generated">حدد السرعة القصوى للقيادة في القائد الآلي بناءً على البيانات من الخرائط المحملة، &lt;b&gt;Mapbox&lt;/b&gt;، &lt;b&gt;Navigate on القائد الآلي&lt;/b&gt;، أو لوحة القيادة (المركبات المدعومة: &lt;b&gt;Ford&lt;/b&gt;، &lt;b&gt;Genesis&lt;/b&gt;، &lt;b&gt;Hyundai&lt;/b&gt;، &lt;b&gt;Kia&lt;/b&gt;، &lt;b&gt;Lexus&lt;/b&gt;، &lt;b&gt;Toyota&lt;/b&gt;).</translation>
     </message>
     <message>
         <source>Fallback Speed</source>
@@ -1609,7 +1490,7 @@
     </message>
     <message>
         <source>How far ahead openpilot anticipates upcoming higher speed limits from the downloaded map data.</source>
-        <translation type="gpt-4o-generated">إلى أي مدى يتوقع openpilot حدود السرعة الأعلى القادمة من بيانات الخريطة المحملة.</translation>
+        <translation type="gpt-4o-generated">إلى أي مدى يتوقع القائد الآلي حدود السرعة الأعلى القادمة من بيانات الخريطة المحملة.</translation>
     </message>
     <message>
         <source>Lower Limit Lookahead Time</source>
@@ -1617,7 +1498,7 @@
     </message>
     <message>
         <source>How far ahead openpilot anticipates upcoming lower speed limits from the downloaded map data.</source>
-        <translation type="gpt-4o-generated">إلى أي مدى يتوقع openpilot حدود السرعة المنخفضة القادمة من بيانات الخريطة التي تم تنزيلها.</translation>
+        <translation type="gpt-4o-generated">إلى أي مدى يتوقع القائد الآلي حدود السرعة المنخفضة القادمة من بيانات الخريطة التي تم تنزيلها.</translation>
     </message>
     <message>
         <source>Match Speed Limit on Engage</source>
@@ -1625,7 +1506,7 @@
     </message>
     <message>
         <source>Automatically set cruise control speed to match the current speed limit when first enabling openpilot.</source>
-        <translation type="gpt-4o-generated">قم بضبط سرعة التحكم في السرعة تلقائيًا لتتوافق مع الحد الأقصى للسرعة الحالي عند تمكين openpilot لأول مرة.</translation>
+        <translation type="gpt-4o-generated">قم بضبط سرعة التحكم في السرعة تلقائيًا لتتوافق مع الحد الأقصى للسرعة الحالي عند تمكين القائد الآلي لأول مرة.</translation>
     </message>
     <message>
         <source>Use Mapbox as Fallback</source>
@@ -1917,7 +1798,7 @@
     </message>
     <message>
         <source>Advanced settings for customizing how openpilot handles acceleration and braking.</source>
-        <translation type="gpt-4o-generated">إعدادات متقدمة لتخصيص كيفية تعامل openpilot مع التسارع والفرملة.</translation>
+        <translation type="gpt-4o-generated">إعدادات متقدمة لتخصيص كيفية تعامل القائد الآلي مع التسارع والفرملة.</translation>
     </message>
     <message>
         <source>Actuator Delay (Default: %1)</source>
@@ -1953,7 +1834,7 @@
     </message>
     <message>
         <source>Speed where openpilot begins to exit the stopped state. Higher values avoid creeping but may feel sluggish; lower values move sooner but risk creeping.</source>
-        <translation type="gpt-4o-generated">السرعة التي يبدأ فيها openpilot بالخروج من حالة التوقف. القيم الأعلى تتجنب الزحف ولكن قد تشعر بالبطء؛ القيم الأدنى تتحرك في وقت أقرب ولكنها تخاطر بالزحف.</translation>
+        <translation type="gpt-4o-generated">السرعة التي يبدأ فيها القائد الآلي بالخروج من حالة التوقف. القيم الأعلى تتجنب الزحف ولكن قد تشعر بالبطء؛ القيم الأدنى تتحرك في وقت أقرب ولكنها تخاطر بالزحف.</translation>
     </message>
     <message>
         <source>Stop Acceleration (Default: %1)</source>
@@ -1989,7 +1870,7 @@
     </message>
     <message>
         <source>Speed where openpilot beings to enter the stopped state. Higher values brake earlier for smoother stops but might stop too soon; lower values wait longer and can overshoot.</source>
-        <translation type="gpt-4o-generated">السرعة التي يبدأ فيها openpilot بالدخول في حالة التوقف. القيم الأعلى تكبح في وقت مبكر لتوقفات أكثر سلاسة ولكن قد تتوقف في وقت مبكر جدًا؛ القيم الأدنى تنتظر لفترة أطول وقد تتجاوز النقطة المحددة.</translation>
+        <translation type="gpt-4o-generated">السرعة التي يبدأ فيها القائد الآلي بالدخول في حالة التوقف. القيم الأعلى تكبح في وقت مبكر لتوقفات أكثر سلاسة ولكن قد تتوقف في وقت مبكر جدًا؛ القيم الأدنى تنتظر لفترة أطول وقد تتجاوز النقطة المحددة.</translation>
     </message>
     <message>
         <source>Speed Offset (0–24 mph)</source>
@@ -2057,11 +1938,11 @@
     </message>
     <message>
         <source>Automatically slow down for upcoming curves using downloaded maps or the driving model.</source>
-        <translation type="gpt-4o-generated">التباطؤ تلقائيًا للمنحنيات القادمة باستخدام الخرائط المحملة أو نموذج القيادة.</translation>
+        <translation type="gpt-4o-generated">استخدم الخرائط المحملة أو نموذج القيادة لتقليل السرعة تلقائيًا عند الاقتراب من المنحنيات.</translation>
     </message>
     <message>
         <source>Curve Detection Method</source>
-        <translation type="gpt-4o-generated">طريقة كشف المنحنى</translation>
+        <translation type="gpt-4o-generated">طريقة اكتشاف المنحنيات</translation>
     </message>
     <message>
         <source>How curves are detected. &lt;b&gt;Map-Based&lt;/b&gt; uses downloaded map data to identify curves and determine the appropriate speed in which to handle them at, while &lt;b&gt;Vision&lt;/b&gt; relies solely on the driving model.</source>
@@ -2073,15 +1954,15 @@
     </message>
     <message>
         <source>Only trigger &lt;b&gt;Curve Speed Control&lt;/b&gt; if a curve is detected with the model while using the &lt;b&gt;Map-Based&lt;/b&gt; method. Useful to help prevent false positives.</source>
-        <translation type="gpt-4o-generated">قم بتفعيل &lt;b&gt;التحكم في سرعة المنحنى&lt;/b&gt; فقط إذا تم اكتشاف منحنى باستخدام النموذج أثناء استخدام طريقة &lt;b&gt;المعتمدة على الخريطة&lt;/b&gt;. مفيد للمساعدة في منع الإيجابيات الكاذبة.</translation>
+        <translation type="gpt-4o-generated">قم بتفعيل &lt;b&gt;التحكم في سرعة المنحنى&lt;/b&gt; فقط إذا تم اكتشاف منحنى باستخدام النموذج أثناء استخدام طريقة &lt;b&gt;المستندة إلى الخريطة&lt;/b&gt;. مفيد للمساعدة في منع الإيجابيات الكاذبة.</translation>
     </message>
     <message>
         <source>Curve Detection Sensitivity</source>
-        <translation type="gpt-4o-generated">حساسية اكتشاف المنحنى</translation>
+        <translation type="gpt-4o-generated">حساسية اكتشاف المنحنيات</translation>
     </message>
     <message>
         <source>How sensitive openpilot is when detecting curves. Higher values trigger earlier responses at the risk of triggering too often, while lower values increase confidence at the risk of triggering too infrequently.</source>
-        <translation type="gpt-4o-generated">مدى حساسية openpilot عند اكتشاف المنحنيات. القيم الأعلى تؤدي إلى استجابات مبكرة مع خطر التفعيل بشكل متكرر، بينما القيم الأدنى تزيد الثقة مع خطر التفعيل بشكل غير متكرر.</translation>
+        <translation type="gpt-4o-generated">مدى حساسية القائد الآلي عند اكتشاف المنحنيات. القيم الأعلى تؤدي إلى استجابات مبكرة مع خطر التفعيل بشكل متكرر، بينما القيم الأقل تزيد الثقة مع خطر التفعيل بشكل غير متكرر.</translation>
     </message>
     <message>
         <source>Curve Speed Aggressiveness</source>
@@ -2089,7 +1970,7 @@
     </message>
     <message>
         <source>How aggressive openpilot is when navigating through curves. Higher values result in faster turns but may reduce comfort or stability, while lower values result in slower, smoother turns at the risk of being overly cautious.</source>
-        <translation type="gpt-4o-generated">مدى عدوانية openpilot عند التنقل عبر المنحنيات. تؤدي القيم الأعلى إلى انعطافات أسرع ولكن قد تقلل من الراحة أو الاستقرار، بينما تؤدي القيم الأقل إلى انعطافات أبطأ وأكثر سلاسة مع خطر أن تكون مفرطة في الحذر.</translation>
+        <translation type="gpt-4o-generated">مدى عدوانية القائد الآلي عند التنقل عبر المنحنيات. تؤدي القيم الأعلى إلى انعطافات أسرع ولكن قد تقلل من الراحة أو الاستقرار، بينما تؤدي القيم الأقل إلى انعطافات أبطأ وأكثر سلاسة مع خطر أن تكون مفرطة في الحذر.</translation>
     </message>
     <message>
         <source>Map Based</source>
@@ -2101,7 +1982,7 @@
     </message>
     <message>
         <source>The &lt;b&gt;Map Based&lt;/b&gt; option is only available when some &lt;b&gt;Map Data&lt;/b&gt; has been downloaded!</source>
-        <translation type="gpt-4o-generated">خيار &lt;b&gt;المستند إلى الخريطة&lt;/b&gt; متاح فقط عندما يتم تنزيل بعض &lt;b&gt;بيانات الخريطة&lt;/b&gt;!</translation>
+        <translation type="gpt-4o-generated">خيار &lt;b&gt;المستند إلى الخريطة&lt;/b&gt; متاح فقط عند تنزيل بعض &lt;b&gt;بيانات الخريطة&lt;/b&gt;!</translation>
     </message>
 </context>
 <context>
@@ -2513,7 +2394,7 @@
     </message>
     <message>
         <source>The search provider used for destination queries in "Navigate on Openpilot". Options include "MapBox" (recommended), "Amap", and "Google Maps".</source>
-        <translation type="gpt-4o-generated">مزود البحث المستخدم لاستعلامات الوجهة في "Navigate on Openpilot". تشمل الخيارات "MapBox" (موصى به)، "Amap"، و"Google Maps".</translation>
+        <translation type="gpt-4o-generated">مزود البحث المستخدم لاستعلامات الوجهة في "Navigate on القائد الآلي". تشمل الخيارات "MapBox" (موصى به)، "Amap"، و"Google Maps".</translation>
     </message>
     <message>
         <source>Amap Key #1</source>
@@ -2601,7 +2482,7 @@ It will reset in %1 hours and %2 minutes.</source>
     </message>
     <message>
         <source>Automatically collect missing or incorrect speed limits from your dashboard (if supported), &lt;b&gt;Mapbox&lt;/b&gt;, and &lt;b&gt;Navigate-on-openpilot&lt;/b&gt; while driving.&lt;br&gt;&lt;br&gt;When the car is turned off and connected to Wi-Fi, your speed limit data is automatically processed into a compiled file formatted for the tool located at &lt;b&gt;SpeedLimitFiller.frogpilot.download&lt;/b&gt;.&lt;br&gt;&lt;br&gt;You can grab the processed file from &lt;b&gt;The Pond&lt;/b&gt; via the &lt;b&gt;Download Speed Limits&lt;/b&gt; menu.&lt;br&gt;&lt;br&gt;Want a more thorough walkthrough? Check out the &lt;b&gt;#speed-limit-filler&lt;/b&gt; channel in the &lt;b&gt;FrogPilot Discord&lt;/b&gt;!</source>
-        <translation type="gpt-4o-generated">جمع حدود السرعة المفقودة أو غير الصحيحة تلقائيًا من لوحة القيادة الخاصة بك (إذا كانت مدعومة)، &lt;b&gt;Mapbox&lt;/b&gt;، و&lt;b&gt;Navigate-on-openpilot&lt;/b&gt; أثناء القيادة.&lt;br&gt;&lt;br&gt;عندما يتم إطفاء السيارة وتكون متصلة بشبكة Wi-Fi، تتم معالجة بيانات حدود السرعة الخاصة بك تلقائيًا في ملف مجمع مهيأ للأداة الموجودة في &lt;b&gt;SpeedLimitFiller.frogpilot.download&lt;/b&gt;.&lt;br&gt;&lt;br&gt;يمكنك الحصول على الملف المعالج من &lt;b&gt;The Pond&lt;/b&gt; عبر قائمة &lt;b&gt;Download Speed Limits&lt;/b&gt;.&lt;br&gt;&lt;br&gt;تريد شرحًا أكثر تفصيلًا؟ تحقق من قناة &lt;b&gt;#speed-limit-filler&lt;/b&gt; في &lt;b&gt;FrogPilot Discord&lt;/b&gt;!</translation>
+        <translation type="gpt-4o-generated">جمع حدود السرعة المفقودة أو غير الصحيحة تلقائيًا من لوحة القيادة الخاصة بك (إذا كانت مدعومة)، &lt;b&gt;Mapbox&lt;/b&gt;، و&lt;b&gt;Navigate-on-القائد الآلي&lt;/b&gt; أثناء القيادة.&lt;br&gt;&lt;br&gt;عندما يتم إطفاء السيارة وتكون متصلة بشبكة Wi-Fi، تتم معالجة بيانات حدود السرعة الخاصة بك تلقائيًا في ملف مجمع مهيأ للأداة الموجودة في &lt;b&gt;SpeedLimitFiller.القائد الآلي.download&lt;/b&gt;.&lt;br&gt;&lt;br&gt;يمكنك الحصول على الملف المعالج من &lt;b&gt;The Pond&lt;/b&gt; عبر قائمة &lt;b&gt;Download Speed Limits&lt;/b&gt;.&lt;br&gt;&lt;br&gt;تريد شرحًا أكثر تفصيلًا؟ تحقق من قناة &lt;b&gt;#speed-limit-filler&lt;/b&gt; في &lt;b&gt;القائد الآلي Discord&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Cancelled...</source>
@@ -2676,7 +2557,7 @@ It will reset in %1 hours and %2 minutes.</source>
     </message>
     <message>
         <source>FrogPilot settings for alert volumes and custom notifications to stay informed about important driving events.</source>
-        <translation type="gpt-4o-generated">إعدادات FrogPilot لأحجام التنبيهات والإشعارات المخصصة للبقاء على اطلاع حول الأحداث المهمة أثناء القيادة.</translation>
+        <translation type="gpt-4o-generated">إعدادات القائد الآلي لأحجام التنبيهات والإشعارات المخصصة للبقاء على اطلاع حول الأحداث المهمة أثناء القيادة.</translation>
     </message>
     <message>
         <source>Driving Controls</source>
@@ -2684,7 +2565,7 @@ It will reset in %1 hours and %2 minutes.</source>
     </message>
     <message>
         <source>FrogPilot settings for acceleration, braking, and steering.</source>
-        <translation type="gpt-4o-generated">إعدادات FrogPilot للتسارع، والفرملة، والتوجيه.</translation>
+        <translation type="gpt-4o-generated">إعدادات القائد الآلي للتسارع، والفرملة، والتوجيه.</translation>
     </message>
     <message>
         <source>Navigation</source>
@@ -2692,7 +2573,7 @@ It will reset in %1 hours and %2 minutes.</source>
     </message>
     <message>
         <source>Download map data for &lt;b&gt;Curve Speed Control&lt;/b&gt;, &lt;b&gt;Speed Limit Controller&lt;/b&gt;, and set up &lt;b&gt;Navigate on openpilot (NOO)&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">قم بتنزيل بيانات الخريطة لـ &lt;b&gt;التحكم في سرعة المنحنى&lt;/b&gt;، &lt;b&gt;محدد السرعة&lt;/b&gt;، وقم بإعداد &lt;b&gt;التنقل على openpilot (NOO)&lt;/b&gt;.</translation>
+        <translation type="gpt-4o-generated">قم بتنزيل بيانات الخريطة لـ &lt;b&gt;التحكم في سرعة المنحنى&lt;/b&gt;، &lt;b&gt;محدد السرعة&lt;/b&gt;، وقم بإعداد &lt;b&gt;التنقل على القائد الآلي (NOO)&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>System Management</source>
@@ -2700,7 +2581,7 @@ It will reset in %1 hours and %2 minutes.</source>
     </message>
     <message>
         <source>Data storage management, debugging tools, device settings, screen behavior settings, system backups, and utilities to maintain, optimize, and troubleshoot FrogPilot.</source>
-        <translation type="gpt-4o-generated">إدارة تخزين البيانات، أدوات تصحيح الأخطاء، إعدادات الجهاز، إعدادات سلوك الشاشة، النسخ الاحتياطية للنظام، والأدوات للحفاظ على، تحسين، واستكشاف أخطاء FrogPilot وإصلاحها.</translation>
+        <translation type="gpt-4o-generated">إدارة تخزين البيانات، أدوات تصحيح الأخطاء، إعدادات الجهاز، إعدادات سلوك الشاشة، النسخ الاحتياطية للنظام، والأدوات للحفاظ على، تحسين، واستكشاف أخطاء القائد الآلي وإصلاحها.</translation>
     </message>
     <message>
         <source>Theme and Appearance</source>
@@ -2708,7 +2589,7 @@ It will reset in %1 hours and %2 minutes.</source>
     </message>
     <message>
         <source>FrogPilot settings for the current theme, driving-screen, and the overall user interface.</source>
-        <translation type="gpt-4o-generated">إعدادات FrogPilot للموضوع الحالي، شاشة القيادة، وواجهة المستخدم العامة.</translation>
+        <translation type="gpt-4o-generated">إعدادات القائد الآلي للموضوع الحالي، شاشة القيادة، وواجهة المستخدم العامة.</translation>
     </message>
     <message>
         <source>Vehicle Controls</source>
@@ -2765,7 +2646,7 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     </message>
     <message>
         <source>Adjust the volume for each alert in openpilot.</source>
-        <translation type="gpt-4o-generated">ضبط مستوى الصوت لكل تنبيه في openpilot.</translation>
+        <translation type="gpt-4o-generated">ضبط مستوى الصوت لكل تنبيه في القائد الآلي.</translation>
     </message>
     <message>
         <source>Disengage Volume</source>
@@ -2781,7 +2662,7 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     </message>
     <message>
         <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller loaded&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilot engaged&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">اضبط مستوى الصوت للتنبيهات مثل:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller loaded&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilot engaged&lt;/b&gt;</translation>
+        <translation type="gpt-4o-generated">اضبط مستوى الصوت للتنبيهات مثل:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller loaded&lt;/b&gt;&lt;br&gt;&lt;b&gt;القائد الآلي engaged&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Prompt Volume</source>
@@ -2805,7 +2686,7 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     </message>
     <message>
         <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;openpilot Unavailable&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">اضبط مستوى الصوت للتنبيهات مثل:&lt;br&gt;&lt;br&gt;&lt;b&gt;openpilot غير متاح&lt;/b&gt;</translation>
+        <translation type="gpt-4o-generated">اضبط مستوى الصوت للتنبيهات مثل:&lt;br&gt;&lt;br&gt;&lt;b&gt;القائد الآلي غير متاح&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Warning Soft Volume</source>
@@ -2825,11 +2706,11 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     </message>
     <message>
         <source>FrogPilot Alerts</source>
-        <translation type="gpt-4o-generated">تنبيهات FrogPilot</translation>
+        <translation type="gpt-4o-generated">تنبيهات القائد الآلي</translation>
     </message>
     <message>
         <source>FrogPilot alerts for various events in openpilot.</source>
-        <translation type="gpt-4o-generated">تنبيهات FrogPilot لمختلف الأحداث في openpilot.</translation>
+        <translation type="gpt-4o-generated">تنبيهات القائد الآلي لمختلف الأحداث في القائد الآلي.</translation>
     </message>
     <message>
         <source>Goat Scream Steering Saturated Alert</source>
@@ -2837,7 +2718,7 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     </message>
     <message>
         <source>The infamous "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">صرخة "الماعز" الشهيرة التي جلبت الفرح والغضب لمستخدمي FrogPilot في جميع أنحاء العالم!</translation>
+        <translation type="gpt-4o-generated">صرخة "الماعز" الشهيرة التي جلبت الفرح والغضب لمستخدمي القائد الآلي في جميع أنحاء العالم!</translation>
     </message>
     <message>
         <source>Green Light Alert</source>
@@ -2892,7 +2773,7 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     </message>
     <message>
         <source>The overall appearance of openpilot.</source>
-        <translation type="gpt-4o-generated">المظهر العام لـ openpilot.</translation>
+        <translation type="gpt-4o-generated">المظهر العام لـ القائد الآلي.</translation>
     </message>
     <message>
         <source>Color Scheme</source>
@@ -2902,9 +2783,9 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <source>openpilot's color scheme.
 
 Want to submit your own color scheme? Share it in the "custom-themes" channel on the FrogPilot Discord!</source>
-        <translation type="gpt-4o-generated">نظام الألوان الخاص بـ openpilot.
+        <translation type="gpt-4o-generated">نظام الألوان الخاص بـ القائد الآلي.
 
-هل تريد تقديم نظام الألوان الخاص بك؟ شاركه في قناة "custom-themes" على FrogPilot Discord!</translation>
+هل تريد تقديم نظام الألوان الخاص بك؟ شاركه في قناة "custom-themes" على القائد الآلي Discord!</translation>
     </message>
     <message>
         <source>Icon Pack</source>
@@ -2914,9 +2795,9 @@ Want to submit your own color scheme? Share it in the "custom-themes" channel on
         <source>openpilot's icon pack.
 
 Want to submit your own icons? Share them in the "custom-themes" channel on the FrogPilot Discord!</source>
-        <translation type="gpt-4o-generated">حزمة أيقونات openpilot.
+        <translation type="gpt-4o-generated">حزمة أيقونات القائد الآلي.
 
-هل تريد تقديم أيقوناتك الخاصة؟ شاركها في قناة "custom-themes" على Discord FrogPilot!</translation>
+هل تريد تقديم أيقوناتك الخاصة؟ شاركها في قناة "custom-themes" على Discord القائد الآلي!</translation>
     </message>
     <message>
         <source>Sound Pack</source>
@@ -2926,9 +2807,9 @@ Want to submit your own icons? Share them in the "custom-themes" channel on the 
         <source>openpilot's sound effects.
 
 Want to submit your own sounds? Share them in the "custom-themes" channel on the FrogPilot Discord!</source>
-        <translation type="gpt-4o-generated">المؤثرات الصوتية لـ openpilot.
+        <translation type="gpt-4o-generated">المؤثرات الصوتية لـ القائد الآلي.
 
-هل تريد تقديم أصواتك الخاصة؟ شاركها في قناة "custom-themes" على Discord الخاص بـ FrogPilot!</translation>
+هل تريد تقديم أصواتك الخاصة؟ شاركها في قناة "custom-themes" على Discord الخاص بـ القائد الآلي!</translation>
     </message>
     <message>
         <source>Steering Wheel</source>
@@ -2944,7 +2825,7 @@ Want to submit your own sounds? Share them in the "custom-themes" channel on the
 Want to submit your own animations? Share them in the "custom-themes" channel on the FrogPilot Discord!</source>
         <translation type="gpt-4o-generated">رسوم متحركة لإشارات الانعطاف ذات طابع خاص.
 
-هل تريد تقديم الرسوم المتحركة الخاصة بك؟ شاركها في قناة "custom-themes" على FrogPilot Discord!</translation>
+هل تريد تقديم الرسوم المتحركة الخاصة بك؟ شاركها في قناة "custom-themes" على القائد الآلي Discord!</translation>
     </message>
     <message>
         <source>Download Status</source>
@@ -2956,7 +2837,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Holiday-based visual themes for openpilot. Minor holidays last one day; major holidays (Christmas, Easter, Halloween, etc.) continue all week.</source>
-        <translation type="gpt-4o-generated">موضوعات مرئية مستندة إلى العطلات لـ openpilot. تستمر العطلات الصغيرة ليوم واحد؛ بينما تستمر العطلات الكبرى (عيد الميلاد، عيد الفصح، الهالوين، إلخ) طوال الأسبوع.</translation>
+        <translation type="gpt-4o-generated">موضوعات مرئية مستندة إلى العطلات لـ القائد الآلي. تستمر العطلات الصغيرة ليوم واحد؛ بينما تستمر العطلات الكبرى (عيد الميلاد، عيد الفصح، الهالوين، إلخ) طوال الأسبوع.</translation>
     </message>
     <message>
         <source>Rainbow Path</source>
@@ -3108,7 +2989,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>FROGPILOT</source>
-        <translation type="gpt-4o-generated">FROGPILOT</translation>
+        <translation type="gpt-4o-generated">القائد الآلي</translation>
     </message>
     <message>
         <source>CUSTOM</source>
@@ -3155,7 +3036,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Debug FrogPilot during the next drive by utilizing all of FrogPilot's developer metrics for either bug reporting, or self-debugging.</source>
-        <translation type="gpt-4o-generated">استخدم FrogPilot لتصحيح الأخطاء أثناء القيادة التالية عن طريق الاستفادة من جميع مقاييس المطور الخاصة بـ FrogPilot إما للإبلاغ عن الأخطاء أو لتصحيح الأخطاء ذاتيًا.</translation>
+        <translation type="gpt-4o-generated">استخدم القائد الآلي لتصحيح الأخطاء أثناء القيادة التالية عن طريق الاستفادة من جميع مقاييس المطور الخاصة بـ القائد الآلي إما للإبلاغ عن الأخطاء أو لتصحيح الأخطاء ذاتيًا.</translation>
     </message>
     <message>
         <source>Flash Panda</source>
@@ -3195,7 +3076,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Force openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">إجبار openpilot إما خارج الطريق أو على الطريق.</translation>
+        <translation type="gpt-4o-generated">إجبار القائد الآلي إما خارج الطريق أو على الطريق.</translation>
     </message>
     <message>
         <source>OFFROAD</source>
@@ -3223,7 +3104,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>I saw an alert that said "openpilot crashed"</source>
-        <translation type="gpt-4o-generated">رأيت تنبيهًا يقول "openpilot crashed"</translation>
+        <translation type="gpt-4o-generated">رأيت تنبيهًا يقول "القائد الآلي crashed"</translation>
     </message>
     <message>
         <source>What's going on?</source>
@@ -3275,15 +3156,15 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Reset Toggles to Match Stock openpilot</source>
-        <translation type="gpt-4o-generated">إعادة تعيين التبديلات لتطابق openpilot الافتراضي</translation>
+        <translation type="gpt-4o-generated">إعادة تعيين التبديلات لتطابق القائد الآلي الافتراضي</translation>
     </message>
     <message>
         <source>Reset all toggles to match stock openpilot.</source>
-        <translation type="gpt-4o-generated">إعادة تعيين جميع التبديلات لتطابق openpilot الافتراضي.</translation>
+        <translation type="gpt-4o-generated">إعادة تعيين جميع التبديلات لتطابق القائد الآلي الافتراضي.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all toggles to match stock openpilot?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين جميع التبديلات لتتوافق مع openpilot الافتراضي؟</translation>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين جميع التبديلات لتتوافق مع القائد الآلي الافتراضي؟</translation>
     </message>
     <message>
         <source>Ensure your device has an internet connection before sending a report!</source>
@@ -3319,19 +3200,19 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>openpilot disengages when I don't expect it</source>
-        <translation type="gpt-4o-generated">يتوقف openpilot عن العمل عندما لا أتوقع ذلك</translation>
+        <translation type="gpt-4o-generated">يتوقف القائد الآلي عن العمل عندما لا أتوقع ذلك</translation>
     </message>
     <message>
         <source>openpilot doesn’t resume after I stop</source>
-        <translation type="gpt-4o-generated">لا يستأنف openpilot بعد أن أتوقف</translation>
+        <translation type="gpt-4o-generated">لا يستأنف القائد الآلي بعد أن أتوقف</translation>
     </message>
     <message>
         <source>openpilot doesn't react to stopped vehicles ahead</source>
-        <translation type="gpt-4o-generated">لا يتفاعل openpilot مع المركبات المتوقفة أمامه</translation>
+        <translation type="gpt-4o-generated">لا يتفاعل القائد الآلي مع المركبات المتوقفة أمامه</translation>
     </message>
     <message>
         <source>openpilot feels sluggish or slow to respond</source>
-        <translation type="gpt-4o-generated">يشعر openpilot بالبطء أو الاستجابة البطيئة</translation>
+        <translation type="gpt-4o-generated">يشعر القائد الآلي بالبطء أو الاستجابة البطيئة</translation>
     </message>
     <message>
         <source>Steering feels twitchy or unnatural</source>
@@ -3386,15 +3267,15 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Disable openpilot Longitudinal Control</source>
-        <translation type="gpt-4o-generated">تعطيل التحكم الطولي في openpilot</translation>
+        <translation type="gpt-4o-generated">تعطيل التحكم الطولي في القائد الآلي</translation>
     </message>
     <message>
         <source>Disables openpilot longitudinal control and uses the car's stock ACC instead.</source>
-        <translation type="gpt-4o-generated">يعطل التحكم الطولي في openpilot ويستخدم نظام التحكم في السرعة التكيفي (ACC) الخاص بالسيارة بدلاً من ذلك.</translation>
+        <translation type="gpt-4o-generated">يعطل التحكم الطولي في القائد الآلي ويستخدم نظام التحكم في السرعة التكيفي (ACC) الخاص بالسيارة بدلاً من ذلك.</translation>
     </message>
     <message>
         <source>Are you sure you want to completely disable openpilot longitudinal control?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد تعطيل التحكم الطولي في openpilot تمامًا؟</translation>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد تعطيل التحكم الطولي في القائد الآلي تمامًا؟</translation>
     </message>
     <message>
         <source>General Motors Settings</source>
@@ -3438,11 +3319,11 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>comma's New Longitudinal API</source>
-        <translation type="gpt-4o-generated">واجهة برمجة التطبيقات الطولية الجديدة من comma</translation>
+        <translation type="gpt-4o-generated">واجهة برمجة التطبيقات الطولية الجديدة من NMK</translation>
     </message>
     <message>
         <source>comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some &lt;b&gt;Hyundai&lt;/b&gt;/&lt;b&gt;Kia&lt;/b&gt;/&lt;b&gt;Genesis&lt;/b&gt; vehicles.</source>
-        <translation type="gpt-4o-generated">نظام التحكم الطولي الجديد من comma الذي أظهر تحسنًا كبيرًا في التسارع والفرملة، ولكنه يواجه مشكلات في بعض مركبات &lt;b&gt;Hyundai&lt;/b&gt;/&lt;b&gt;Kia&lt;/b&gt;/&lt;b&gt;Genesis&lt;/b&gt;.</translation>
+        <translation type="gpt-4o-generated">نظام التحكم الطولي الجديد من NMK الذي أظهر تحسنًا كبيرًا في التسارع والفرملة، ولكنه يواجه مشكلات في بعض مركبات &lt;b&gt;Hyundai&lt;/b&gt;/&lt;b&gt;Kia&lt;/b&gt;/&lt;b&gt;Genesis&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>"Taco Bell Run" Torque Hack</source>
@@ -3450,7 +3331,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>The torque hack from comma’s 2022 "Taco Bell Run" drive. Designed to improve turning at low speeds by increasing the allowed steering torque.</source>
-        <translation type="gpt-4o-generated">اختراق العزم من قيادة "Taco Bell Run" لعام 2022 من شركة comma. مصمم لتحسين الانعطاف عند السرعات المنخفضة عن طريق زيادة عزم التوجيه المسموح به.</translation>
+        <translation type="gpt-4o-generated">اختراق العزم من قيادة "Taco Bell Run" لعام 2022 من شركة NMK. مصمم لتحسين الانعطاف عند السرعات المنخفضة عن طريق زيادة عزم التوجيه المسموح به.</translation>
     </message>
     <message>
         <source>Toyota/Lexus Settings</source>
@@ -3474,7 +3355,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>The cluster speed offset used by openpilot to match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">إزاحة سرعة الكتلة المستخدمة بواسطة openpilot لمطابقة السرعة المعروضة على لوحة القيادة.</translation>
+        <translation type="gpt-4o-generated">إزاحة سرعة الكتلة المستخدمة بواسطة القائد الآلي لمطابقة السرعة المعروضة على لوحة القيادة.</translation>
     </message>
     <message>
         <source>FrogsGoMoo's Personal Tweaks</source>
@@ -3525,7 +3406,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Advanced settings for fine-tuning openpilot's driving screen.</source>
-        <translation type="gpt-4o-generated">الإعدادات المتقدمة لضبط شاشة القيادة في openpilot.</translation>
+        <translation type="gpt-4o-generated">الإعدادات المتقدمة لضبط شاشة القيادة في القائد الآلي.</translation>
     </message>
     <message>
         <source>Hide Current Speed</source>
@@ -3581,7 +3462,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Use the vehicle's wheel speed instead of the cluster speed. This is purely a visual change and doesn't impact how openpilot drives.</source>
-        <translation type="gpt-4o-generated">استخدم سرعة عجلة السيارة بدلاً من سرعة العداد. هذا تغيير بصري بحت ولا يؤثر على كيفية قيادة openpilot.</translation>
+        <translation type="gpt-4o-generated">استخدم سرعة عجلة السيارة بدلاً من سرعة العداد. هذا تغيير بصري بحت ولا يؤثر على كيفية قيادة القائد الآلي.</translation>
     </message>
     <message>
         <source>Developer UI</source>
@@ -3589,7 +3470,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Detailed information about openpilot's internal operations.</source>
-        <translation type="gpt-4o-generated">معلومات مفصلة عن العمليات الداخلية لـ openpilot.</translation>
+        <translation type="gpt-4o-generated">معلومات مفصلة عن العمليات الداخلية لـ القائد الآلي.</translation>
     </message>
     <message>
         <source>Adjacent Path Metrics</source>
@@ -3605,7 +3486,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Performance data, sensor readings, and system metrics for debugging and optimizing openpilot.</source>
-        <translation type="gpt-4o-generated">بيانات الأداء، قراءات المستشعرات، ومقاييس النظام لتصحيح الأخطاء وتحسين openpilot.</translation>
+        <translation type="gpt-4o-generated">بيانات الأداء، قراءات المستشعرات، ومقاييس النظام لتصحيح الأخطاء وتحسين القائد الآلي.</translation>
     </message>
     <message>
         <source>Border Metrics</source>
@@ -3737,7 +3618,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Display an image on the screen where openpilot is wanting to stop.</source>
-        <translation type="gpt-4o-generated">عرض صورة على الشاشة حيث يريد openpilot التوقف.</translation>
+        <translation type="gpt-4o-generated">عرض صورة على الشاشة حيث يريد القائد الآلي التوقف.</translation>
     </message>
     <message>
         <source>Radar Tracks</source>
@@ -3753,7 +3634,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Custom FrogPilot widgets for the driving screen.</source>
-        <translation type="gpt-4o-generated">عناصر واجهة مستخدم FrogPilot المخصصة لشاشة القيادة.</translation>
+        <translation type="gpt-4o-generated">عناصر واجهة مستخدم القائد الآلي المخصصة لشاشة القيادة.</translation>
     </message>
     <message>
         <source>Acceleration Path</source>
@@ -3761,7 +3642,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Colorize the driving path based on openpilot's current desired acceleration and deceleration rate.</source>
-        <translation type="gpt-4o-generated">لون مسار القيادة بناءً على معدل التسارع والتباطؤ الحالي المطلوب من openpilot.</translation>
+        <translation type="gpt-4o-generated">لون مسار القيادة بناءً على معدل التسارع والتباطؤ الحالي المطلوب من القائد الآلي.</translation>
     </message>
     <message>
         <source>Adjacent Lanes</source>
@@ -3801,7 +3682,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Pedals to indicate when either of the pedals are currently being used.&lt;br&gt;&lt;br&gt;&lt;b&gt;Dynamic&lt;/b&gt;: The pedals change in opacity in accordance to how much openpilot is accelerating or decelerating&lt;br&gt;&lt;b&gt;Static&lt;/b&gt;: The pedals are displayed with full opacity when active, and dimmed when not in use</source>
-        <translation type="gpt-4o-generated">دواسات للإشارة عند استخدام أي من الدواسات حاليًا.&lt;br&gt;&lt;br&gt;&lt;b&gt;ديناميكي&lt;/b&gt;: تتغير دواسات في الشفافية وفقًا لمقدار تسارع أو تباطؤ openpilot&lt;br&gt;&lt;b&gt;ثابت&lt;/b&gt;: تُعرض الدواسات بوضوح كامل عند النشاط، وتُخفت عند عدم الاستخدام</translation>
+        <translation type="gpt-4o-generated">دواسات للإشارة عند استخدام أي من الدواسات حاليًا.&lt;br&gt;&lt;br&gt;&lt;b&gt;ديناميكي&lt;/b&gt;: تتغير دواسات في الشفافية وفقًا لمقدار تسارع أو تباطؤ القائد الآلي&lt;br&gt;&lt;b&gt;ثابت&lt;/b&gt;: تُعرض الدواسات بوضوح كامل عند النشاط، وتُخفت عند عدم الاستخدام</translation>
     </message>
     <message>
         <source>Rotating Steering Wheel</source>
@@ -3925,7 +3806,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Visual features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">ميزات بصرية لتحسين تجربتك العامة مع openpilot.</translation>
+        <translation type="gpt-4o-generated">ميزات بصرية لتحسين تجربتك العامة مع القائد الآلي.</translation>
     </message>
     <message>
         <source>Camera View</source>
@@ -3933,7 +3814,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>The active camera view display. This is purely a visual change and doesn't impact how openpilot drives!</source>
-        <translation type="gpt-4o-generated">عرض الكاميرا النشطة. هذا تغيير بصري بحت ولا يؤثر على كيفية قيادة openpilot!</translation>
+        <translation type="gpt-4o-generated">عرض الكاميرا النشطة. هذا تغيير بصري بحت ولا يؤثر على كيفية قيادة القائد الآلي!</translation>
     </message>
     <message>
         <source>Show Driver Camera When In Reverse</source>
@@ -4260,7 +4141,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Force openpilot to Coast</source>
-        <translation type="gpt-4o-generated">إجبار openpilot على التوقف التدريجي</translation>
+        <translation type="gpt-4o-generated">إجبار القائد الآلي على التوقف التدريجي</translation>
     </message>
     <message>
         <source>Pause Longitudinal</source>
@@ -4442,11 +4323,11 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Immediately connect to the internet to check for updates. If you do not connect to the internet, openpilot won't engage in %1</source>
-        <translation>اتصل فوراً بالإنترنت للتحقق من وجود تحديثات. إذا لم تكم متصلاً بالإنترنت فإن openpilot لن يساهم في %1</translation>
+        <translation>اتصل فوراً بالإنترنت للتحقق من وجود تحديثات. إذا لم تكم متصلاً بالإنترنت فإن القائد الآلي لن يساهم في %1</translation>
     </message>
     <message>
         <source>Connect to internet to check for updates. openpilot won't automatically start until it connects to internet to check for updates.</source>
-        <translation>اتصل بالإنترنت للتحقق من وجود تحديثات. لا يعمل openpilot تلقائياً إلا إذا اتصل بالإنترنت من أجل التحقق من التحديثات.</translation>
+        <translation>اتصل بالإنترنت للتحقق من وجود تحديثات. لا يعمل القائد الآلي تلقائياً إلا إذا اتصل بالإنترنت من أجل التحقق من التحديثات.</translation>
     </message>
     <message>
         <source>Unable to download updates
@@ -4464,7 +4345,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Device failed to register. It will not connect to or upload to comma.ai servers, and receives no support from comma.ai. If this is an official device, visit https://comma.ai/support.</source>
-        <translation>فشل تسجيل الجهاز. لن يقوم بالاتصال أو تحميل خوادم comma.ai، ولا تلقي الدعم من comma.ai. إذا كان هذا الجهاز نظامياً فيرجى زيارة الموقع https://comma.ai/support.</translation>
+        <translation>فشل تسجيل الجهاز. لن يقوم بالاتصال أو تحميل خوادم NMK.ai، ولا تلقي الدعم من NMK.ai. إذا كان هذا الجهاز نظامياً فيرجى زيارة الموقع https://NMK.ai/support.</translation>
     </message>
     <message>
         <source>NVMe drive not mounted.</source>
@@ -4476,15 +4357,15 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>openpilot was unable to identify your car. Your car is either unsupported or its ECUs are not recognized. Please submit a pull request to add the firmware versions to the proper vehicle. Need help? Join discord.comma.ai.</source>
-        <translation>لم يكن openpilot قادراً على تحديد سيارتك. إما أن تكون سيارتك غير مدعومة أو أنه لم يتم التعرف على وحدة التحكم الإلكتروني (ECUs) فيها. يرجى تقديم طلب سحب من أجل إضافة نسخ برمجيات ثابتة إلى السيارة المناسبة. هل تحتاج إلى أي مساعدة؟ لا تتردد في التواصل مع doscord.comma.ai.</translation>
+        <translation>لم يكن القائد الآلي قادراً على تحديد سيارتك. إما أن تكون سيارتك غير مدعومة أو أنه لم يتم التعرف على وحدة التحكم الإلكتروني (ECUs) فيها. يرجى تقديم طلب سحب من أجل إضافة نسخ برمجيات ثابتة إلى السيارة المناسبة. هل تحتاج إلى أي مساعدة؟ لا تتردد في التواصل مع doscord.NMK.ai.</translation>
     </message>
     <message>
         <source>openpilot was unable to identify your car. Check integrity of cables and ensure all connections are secure, particularly that the comma power is fully inserted in the OBD-II port of the vehicle. Need help? Join discord.comma.ai.</source>
-        <translation>لم يتمكن openpilot من تحديد سيارتك. تحقق من سلامة الكابلات وتأكد من تأمين جميع الوصلات، لا سيما أنه قد تم إدخال طاقة الفاصلة بالكامل في منفذ OBD-II في السيارة. هل تريد أي مساعدة؟ لا تتردد في الانضمام إلى discord.comma.ai.</translation>
+        <translation>لم يتمكن القائد الآلي من تحديد سيارتك. تحقق من سلامة الكابلات وتأكد من تأمين جميع الوصلات، لا سيما أنه قد تم إدخال طاقة الفاصلة بالكامل في منفذ OBD-II في السيارة. هل تريد أي مساعدة؟ لا تتردد في الانضمام إلى discord.NMK.ai.</translation>
     </message>
     <message>
         <source>openpilot detected a change in the device's mounting position. Ensure the device is fully seated in the mount and the mount is firmly secured to the windshield.</source>
-        <translation>لقد اكتشف openpilot تغييراً في موقع تركيب الجهاز. تأكد من تثبيت الجهاز بشكل كامل في موقعه وتثبيته بإحكام على الزجاج الأمامي.</translation>
+        <translation>لقد اكتشف القائد الآلي تغييراً في موقع تركيب الجهاز. تأكد من تثبيت الجهاز بشكل كامل في موقعه وتثبيته بإحكام على الزجاج الأمامي.</translation>
     </message>
 </context>
 <context>
@@ -4506,7 +4387,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     <name>OnroadAlerts</name>
     <message>
         <source>openpilot Unavailable</source>
-        <translation>openpilot غير متوفر</translation>
+        <translation>القائد الآلي غير متوفر</translation>
     </message>
     <message>
         <source>Waiting for controls to start</source>
@@ -4526,15 +4407,15 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>openpilot crashed 💩</source>
-        <translation type="gpt-4o-generated">تحطم openpilot 💩</translation>
+        <translation type="gpt-4o-generated">تحطم القائد الآلي 💩</translation>
     </message>
     <message>
         <source>openpilot crashed</source>
-        <translation type="gpt-4o-generated">تعطل openpilot</translation>
+        <translation type="gpt-4o-generated">تعطل القائد الآلي</translation>
     </message>
     <message>
         <source>Please post the "Error Log" in the FrogPilot Discord!</source>
-        <translation type="gpt-4o-generated">يرجى نشر "سجل الأخطاء" في FrogPilot Discord!</translation>
+        <translation type="gpt-4o-generated">يرجى نشر "سجل الأخطاء" في القائد الآلي Discord!</translation>
     </message>
 </context>
 <context>
@@ -4575,7 +4456,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>Become a comma prime member at connect.comma.ai</source>
-        <translation>كن عضوًا في comma prime على connect.comma.ai</translation>
+        <translation>كن عضوًا في NMK prime على connect.NMK.ai</translation>
     </message>
     <message>
         <source>PRIME FEATURES:</source>
@@ -4606,7 +4487,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>comma prime</source>
-        <translation>comma prime</translation>
+        <translation>NMK prime</translation>
     </message>
 </context>
 <context>
@@ -4670,7 +4551,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     </message>
     <message>
         <source>FrogPilot</source>
-        <translation type="gpt-4o-generated">FrogPilot</translation>
+        <translation type="gpt-4o-generated">القائد الآلي</translation>
     </message>
     <message>
         <source>Restore</source>
@@ -4753,31 +4634,31 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>FrogPilot</source>
-        <translation type="gpt-4o-generated">FrogPilot</translation>
+        <translation type="gpt-4o-generated">القائد الآلي</translation>
     </message>
     <message>
         <source>Welcome to FrogPilot! Since you're new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">مرحبًا بك في FrogPilot! نظرًا لأنك جديد في FrogPilot، تم تطبيق إعداد التبديل "الحد الأدنى"، ولكن يمكنك تغيير هذا في أي وقت عبر زر "مستوى الضبط"!</translation>
+        <translation type="gpt-4o-generated">مرحبًا بك في القائد الآلي! نظرًا لأنك جديد في القائد الآلي، تم تطبيق إعداد التبديل "الحد الأدنى"، ولكن يمكنك تغيير هذا في أي وقت عبر زر "مستوى الضبط"!</translation>
     </message>
     <message>
         <source>Since you're fairly new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">نظرًا لأنك جديد في FrogPilot، تم تطبيق إعداد "الحد الأدنى"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
+        <translation type="gpt-4o-generated">نظرًا لأنك جديد في القائد الآلي، تم تطبيق إعداد "الحد الأدنى"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
     </message>
     <message>
         <source>Since you're experienced with openpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">نظرًا لأنك ذو خبرة مع openpilot، تم تطبيق إعداد "القياسي"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
+        <translation type="gpt-4o-generated">نظرًا لأنك ذو خبرة مع القائد الآلي، تم تطبيق إعداد "القياسي"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
     </message>
     <message>
         <source>Since you're experienced with FrogPilot, the "Standard" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">نظرًا لأن لديك خبرة مع FrogPilot، تم تطبيق إعداد "القياسي"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
+        <translation type="gpt-4o-generated">نظرًا لأن لديك خبرة مع القائد الآلي، تم تطبيق إعداد "القياسي"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
     </message>
     <message>
         <source>Since you're very experienced with FrogPilot, the "Advanced" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">نظرًا لأنك ذو خبرة كبيرة مع FrogPilot، تم تطبيق إعداد "متقدم"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
+        <translation type="gpt-4o-generated">نظرًا لأنك ذو خبرة كبيرة مع القائد الآلي، تم تطبيق إعداد "متقدم"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
     </message>
     <message>
         <source>Welcome to FrogPilot! Since you're new to openpilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">مرحبًا بك في FrogPilot! نظرًا لأنك جديد في openpilot، تم تطبيق إعداد "الحد الأدنى"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
+        <translation type="gpt-4o-generated">مرحبًا بك في القائد الآلي! نظرًا لأنك جديد في القائد الآلي، تم تطبيق إعداد "الحد الأدنى"، ولكن يمكنك تغيير ذلك في أي وقت عبر زر "مستوى الضبط"!</translation>
     </message>
 </context>
 <context>
@@ -4868,7 +4749,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>openpilot</source>
-        <translation>openpilot</translation>
+        <translation>القائد الآلي</translation>
     </message>
     <message>
         <source>Custom Software</source>
@@ -4883,7 +4764,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.</source>
-        <translation>اقرن جهازك بجهاز (connect.comma.ai) واحصل على عرضك من comma prime.</translation>
+        <translation>اقرن جهازك بجهاز (connect.NMK.ai) واحصل على عرضك من NMK prime.</translation>
     </message>
     <message>
         <source>Pair device</source>
@@ -5077,7 +4958,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Automatically Update FrogPilot</source>
-        <translation type="gpt-4o-generated">تحديث FrogPilot تلقائيًا</translation>
+        <translation type="gpt-4o-generated">تحديث القائد الآلي تلقائيًا</translation>
     </message>
     <message>
         <source>Error Log</source>
@@ -5089,15 +4970,15 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>View the error log for openpilot crashes.</source>
-        <translation type="gpt-4o-generated">عرض سجل الأخطاء لأعطال openpilot.</translation>
+        <translation type="gpt-4o-generated">عرض سجل الأخطاء لأعطال القائد الآلي.</translation>
     </message>
     <message>
         <source>Do you want to delete deep storage FrogPilot assets? This includes your toggle settings for quick reinstalls.</source>
-        <translation type="gpt-4o-generated">هل تريد حذف أصول التخزين العميق لـ FrogPilot؟ يتضمن ذلك إعدادات التبديل الخاصة بك لإعادة التثبيت السريع.</translation>
+        <translation type="gpt-4o-generated">هل تريد حذف أصول التخزين العميق لـ القائد الآلي؟ يتضمن ذلك إعدادات التبديل الخاصة بك لإعادة التثبيت السريع.</translation>
     </message>
     <message>
         <source>Are you sure? This is 100% unrecoverable and if you reinstall FrogPilot you'll lose all your previous settings!</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد؟ هذا غير قابل للاسترداد بنسبة 100% وإذا قمت بإعادة تثبيت FrogPilot ستفقد جميع إعداداتك السابقة!</translation>
+        <translation type="gpt-4o-generated">هل أنت متأكد؟ هذا غير قابل للاسترداد بنسبة 100% وإذا قمت بإعادة تثبيت القائد الآلي ستفقد جميع إعداداتك السابقة!</translation>
     </message>
     <message>
         <source>This branch must be downloaded before switching. Would you like to download it now?</source>
@@ -5105,7 +4986,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>FrogPilot will automatically update itself and it's assets when you're offroad and have an active internet connection.</source>
-        <translation type="gpt-4o-generated">سيقوم FrogPilot بتحديث نفسه وأصوله تلقائيًا عندما تكون خارج الطريق ولديك اتصال إنترنت نشط.</translation>
+        <translation type="gpt-4o-generated">سيقوم القائد الآلي بتحديث نفسه وأصوله تلقائيًا عندما تكون خارج الطريق ولديك اتصال إنترنت نشط.</translation>
     </message>
 </context>
 <context>
@@ -5116,7 +4997,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
-        <translation>تنبيه: هذا يمنح SSH إمكانية الوصول إلى جميع المفاتيح العامة في إعدادات GitHub. لا تقم بإدخال اسم مستخدم GitHub بدلاً من اسمك. لن تطلب منك comma employee إطلاقاً أن تضيف اسم مستخدم GitHub الخاص بهم.</translation>
+        <translation>تنبيه: هذا يمنح SSH إمكانية الوصول إلى جميع المفاتيح العامة في إعدادات GitHub. لا تقم بإدخال اسم مستخدم GitHub بدلاً من اسمك. لن تطلب منك NMK employee إطلاقاً أن تضيف اسم مستخدم GitHub الخاص بهم.</translation>
     </message>
     <message>
         <source>ADD</source>
@@ -5177,11 +5058,11 @@ This may take up to a minute.</source>
     <name>TogglesPanel</name>
     <message>
         <source>Enable openpilot</source>
-        <translation>تمكين openpilot</translation>
+        <translation>تمكين القائد الآلي</translation>
     </message>
     <message>
         <source>Use the openpilot system for adaptive cruise control and lane keep driver assistance. Your attention is required at all times to use this feature. Changing this setting takes effect when the car is powered off.</source>
-        <translation>استخدم نظام openpilot من أجل الضبط التكيفي للسرعة والحفاظ على مساعدة السائق للبقاء في المسار. انتباهك مطلوب في جميع الأوقات مع استخدام هذه الميزة. يعمل هذا التغيير في الإعدادات عند إيقاف تشغيل السيارة.</translation>
+        <translation>استخدم نظام القائد الآلي من أجل الضبط التكيفي للسرعة والحفاظ على مساعدة السائق للبقاء في المسار. انتباهك مطلوب في جميع الأوقات مع استخدام هذه الميزة. يعمل هذا التغيير في الإعدادات عند إيقاف تشغيل السيارة.</translation>
     </message>
     <message>
         <source>Enable Lane Departure Warnings</source>
@@ -5213,7 +5094,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>When enabled, pressing the accelerator pedal will disengage openpilot.</source>
-        <translation>عند تمكين هذه الميزة، فإن الضغط على دواسة الوقود سيؤدي إلى فك ارتباط openpilot.</translation>
+        <translation>عند تمكين هذه الميزة، فإن الضغط على دواسة الوقود سيؤدي إلى فك ارتباط القائد الآلي.</translation>
     </message>
     <message>
         <source>Show ETA in 24h Format</source>
@@ -5233,15 +5114,15 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>openpilot Longitudinal Control (Alpha)</source>
-        <translation>التحكم الطولي openpilot (ألفا)</translation>
+        <translation>التحكم الطولي القائد الآلي (ألفا)</translation>
     </message>
     <message>
         <source>WARNING: openpilot longitudinal control is in alpha for this car and will disable Automatic Emergency Braking (AEB).</source>
-        <translation>تحذير: التحكم الطولي في openpilot في المرحلة ألفا لهذه السيارة، وسيقوم بتعطيل مكابح الطوارئ الآلية (AEB).</translation>
+        <translation>تحذير: التحكم الطولي في القائد الآلي في المرحلة ألفا لهذه السيارة، وسيقوم بتعطيل مكابح الطوارئ الآلية (AEB).</translation>
     </message>
     <message>
         <source>On this car, openpilot defaults to the car's built-in ACC instead of openpilot's longitudinal control. Enable this to switch to openpilot longitudinal control. Enabling Experimental mode is recommended when enabling openpilot longitudinal control alpha.</source>
-        <translation>في هذه السيارة يعمل openpilot افتراضياً بالشكل المدمج في التحكم التكيفي في السرعة بدلاً من التحكم الطولي. قم بتمكين هذا الخيار من أجل الانتقال إلى التحكم الطولي. يوصى بتمكين الوضع التجريبي عند استخدام وضع التحكم الطولي ألفا من openpilot.</translation>
+        <translation>في هذه السيارة يعمل القائد الآلي افتراضياً بالشكل المدمج في التحكم التكيفي في السرعة بدلاً من التحكم الطولي. قم بتمكين هذا الخيار من أجل الانتقال إلى التحكم الطولي. يوصى بتمكين الوضع التجريبي عند استخدام وضع التحكم الطولي ألفا من القائد الآلي.</translation>
     </message>
     <message>
         <source>Experimental Mode</source>
@@ -5265,7 +5146,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>openpilot defaults to driving in &lt;b&gt;chill mode&lt;/b&gt;. Experimental mode enables &lt;b&gt;alpha-level features&lt;/b&gt; that aren't ready for chill mode. Experimental features are listed below:</source>
-        <translation>يتم وضع openpilot بشكل قياسي في &lt;b&gt;وضعية الراحة&lt;/b&gt;. يمكن الوضع التجريبي &lt;b&gt;ميزات المستوى ألفا&lt;/b&gt; التي لا تكون جاهزة في وضع الراحة:</translation>
+        <translation>يتم وضع القائد الآلي بشكل قياسي في &lt;b&gt;وضعية الراحة&lt;/b&gt;. يمكن الوضع التجريبي &lt;b&gt;ميزات المستوى ألفا&lt;/b&gt; التي لا تكون جاهزة في وضع الراحة:</translation>
     </message>
     <message>
         <source>End-to-End Longitudinal Control</source>
@@ -5273,7 +5154,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Let the driving model control the gas and brakes. openpilot will drive as it thinks a human would, including stopping for red lights and stop signs. Since the driving model decides the speed to drive, the set speed will only act as an upper bound. This is an alpha quality feature; mistakes should be expected.</source>
-        <translation>دع نظام القيادة يتحكم بالوقود والمكابح. سيقوم openpilot بالقيادة كما لو أنه كائن بشري، بما في ذلك التوقف عند الإشارة الحمراء، وإشارات التوقف. وبما أن نمط القيادة يحدد سرعة القيادة، فإن السرعة المضبوطة تشكل الحد الأقصى فقط. هذه خاصية الجودة ألفا، فيجب توقع حدوث الأخطاء.</translation>
+        <translation>دع نظام القيادة يتحكم بالوقود والمكابح. سيقوم القائد الآلي بالقيادة كما لو أنه كائن بشري، بما في ذلك التوقف عند الإشارة الحمراء، وإشارات التوقف. وبما أن نمط القيادة يحدد سرعة القيادة، فإن السرعة المضبوطة تشكل الحد الأقصى فقط. هذه خاصية الجودة ألفا، فيجب توقع حدوث الأخطاء.</translation>
     </message>
     <message>
         <source>New Driving Visualization</source>
@@ -5285,15 +5166,15 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>openpilot longitudinal control may come in a future update.</source>
-        <translation>قد يتم الحصول على التحكم الطولي في openpilot في عمليات التحديث المستقبلية.</translation>
+        <translation>قد يتم الحصول على التحكم الطولي في القائد الآلي في عمليات التحديث المستقبلية.</translation>
     </message>
     <message>
         <source>Enable the openpilot longitudinal control (alpha) toggle to allow Experimental mode.</source>
-        <translation>تمكين التحكم الطولي من openpilot (ألفا) للسماح بالوضع التجريبي.</translation>
+        <translation>تمكين التحكم الطولي من القائد الآلي (ألفا) للسماح بالوضع التجريبي.</translation>
     </message>
     <message>
         <source>Standard is recommended. In aggressive mode, openpilot will follow lead cars closer and be more aggressive with the gas and brake. In relaxed mode openpilot will stay further away from lead cars. On supported cars, you can cycle through these personalities with your steering wheel distance button.</source>
-        <translation>يوصى بالمعيار. في الوضع العدواني، سيتبع الطيار المفتوح السيارات الرائدة بشكل أقرب ويكون أكثر عدوانية مع البنزين والفرامل. في الوضع المريح، سيبقى openpilot بعيدًا عن السيارات الرائدة. في السيارات المدعومة، يمكنك التنقل بين هذه الشخصيات باستخدام زر مسافة عجلة القيادة.</translation>
+        <translation>يوصى بالمعيار. في الوضع العدواني، سيتبع الطيار المفتوح السيارات الرائدة بشكل أقرب ويكون أكثر عدوانية مع البنزين والفرامل. في الوضع المريح، سيبقى القائد الآلي بعيدًا عن السيارات الرائدة. في السيارات المدعومة، يمكنك التنقل بين هذه الشخصيات باستخدام زر مسافة عجلة القيادة.</translation>
     </message>
     <message>
         <source>The driving visualization will transition to the road-facing wide-angle camera at low speeds to better show some turns. The Experimental mode logo will also be shown in the top right corner.</source>
@@ -5343,7 +5224,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Connect to Wi-Fi to upload driving data and help improve openpilot</source>
-        <translation>الاتصال بشبكة الواي فاي لتحميل بيانات القيادة والمساهمة في تحسين openpilot</translation>
+        <translation>الاتصال بشبكة الواي فاي لتحميل بيانات القيادة والمساهمة في تحسين القائد الآلي</translation>
     </message>
     <message>
         <source>Open Settings</source>
