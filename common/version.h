@@ -1,1 +1,1 @@
-#define COMMA_VERSION "Mr.one定制版"
+#define COMMA_VERSION "القائد الآلي"
