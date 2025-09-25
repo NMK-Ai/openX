@@ -7,10 +7,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends sudo tzdata locales ssh pulseaudio xvfb x11-xserver-utils gnome-screenshot python3-tk python3-dev && \
     rm -rf /var/lib/apt/lists/*
 
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
-ENV LANG=en_US.UTF-8
+RUN sed -i -e 's/# ar_SA.UTF-8 UTF-8/ar_SA.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+ENV LANG=ar_SA.UTF-8
 ENV LANGUAGE=ar_SA:ar
-ENV LC_ALL=en_US.UTF-8
+ENV LC_ALL=ar_SA.UTF-8
 
 COPY tools/install_ubuntu_dependencies.sh /tmp/tools/
 RUN /tmp/tools/install_ubuntu_dependencies.sh && \
