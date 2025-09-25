@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
 ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US:en
+ENV LANGUAGE=ar_SA:ar
 ENV LC_ALL=en_US.UTF-8
 
 COPY tools/install_ubuntu_dependencies.sh /tmp/tools/
