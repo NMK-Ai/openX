@@ -54,12 +54,12 @@ class SettingsLayout(Widget):
 
     # Panel configuration
     self._panels = {
-      PanelType.DEVICE: PanelInfo("Device", DeviceLayout()),
-      PanelType.NETWORK: PanelInfo("Network", NetworkLayout()),
-      PanelType.TOGGLES: PanelInfo("Toggles", TogglesLayout()),
-      PanelType.SOFTWARE: PanelInfo("Software", SoftwareLayout()),
-      PanelType.FIREHOSE: PanelInfo("Firehose", FirehoseLayout()),
-      PanelType.DEVELOPER: PanelInfo("Developer", DeveloperLayout()),
+      PanelType.DEVICE: PanelInfo("الجهاز", DeviceLayout()),
+      PanelType.NETWORK: PanelInfo("الشبكة", NetworkLayout()),
+      PanelType.TOGGLES: PanelInfo("الخيارات", TogglesLayout()),
+      PanelType.SOFTWARE: PanelInfo("البرنامج", SoftwareLayout()),
+      PanelType.FIREHOSE: PanelInfo("التطوية المباشر", FirehoseLayout()),
+      PanelType.DEVELOPER: PanelInfo("NMK", DeveloperLayout()),
     }
 
     self._font_medium = gui_app.font(FontWeight.MEDIUM)
