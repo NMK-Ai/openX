@@ -29,7 +29,8 @@ def manager_init() -> None:
   build_metadata = get_build_metadata()
 
   params = Params()
-  params.put("LanguageSetting", "main_ar")
+  if params.get("LanguageSetting") is None:
+    params.put("LanguageSetting", "main_ar")
   params.clear_all(ParamKeyFlag.CLEAR_ON_MANAGER_START)
   params.clear_all(ParamKeyFlag.CLEAR_ON_ONROAD_TRANSITION)
   params.clear_all(ParamKeyFlag.CLEAR_ON_OFFROAD_TRANSITION)
